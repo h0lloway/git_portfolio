@@ -1,4 +1,8 @@
-<li class="portfolio__list-item item-portf fade-in {{type}} element-show" style="--i: {{@index}}">
+<li 
+	class="portfolio__list-item item-portf fade-in {{type}} element-show"
+	data-portfolio-id="{{id}}"
+	style="--i: {{@index}}"
+>
 	<div class="item-portf__body">
 		<div class="item-portf__browser-bar">
 			<span></span>
@@ -6,24 +10,7 @@
 			<span></span>
 		</div>
 		<div class="item-portf__img">
-			<img src="{{img}}" alt="Скриншот работы">
-		</div>
-		<div class="item-portf__content">
-			<h3 class="item-portf__title">
-				{{title}}
-				<br><span>{{subtitle}}</span>
-			</h3>
-			<ul class="item-portf__list list-reset">
-				<li class="item-portf__list-item">Работа: {{work}}</li>
-				<li class="item-portf__list-item">{{tech}}</li>
-				<li class="item-portf__list-item">Функционал: {{func}}</li>
-			</ul>
-			<a class="item-portf__btn red-btn" 
-				href="{{link}}"
-				target="_blank"
-			>
-				Смотреть
-			</a>
+			<img src="{{desktopImg}}" alt="Скриншот работы">
 		</div>
 	</div>
 </li>

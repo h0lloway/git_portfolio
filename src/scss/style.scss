@@ -3,16 +3,20 @@
 @import 'laptop';
 @import 'nav';
 @import 'home';
+@import 'home-anim';
 @import 'about';
 @import 'skills';
 @import 'portfolio';
 @import 'contact';
 @import 'header';
 
+@import 'device';
+@import 'modal';
+
 @import 'common';
 
 #alpha-banner {
-	max-width: 380px;
+	max-width: 425px;
 	width: 100%;
 	position: fixed;
 	top: 16px;
@@ -23,11 +27,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 8px;
+	gap: 12px;
 	padding: 10px 14px;
 	border-radius: 10px;
 	box-shadow: 0 8px 20px rgba(134, 134, 134, 0.15);
-	font-size: 14px;
+	font-size: 16px;
 	z-index: 9999;
 
 	/* 🔥 КЛЮЧЕВОЕ */
@@ -36,6 +40,7 @@
 
 #alpha-banner i {
 	color: #6366f1;
+	font-size: 24px;
 }
 
 .close-btn {
