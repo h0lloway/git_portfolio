@@ -1,0 +1,282 @@
+.portfolio {
+	transition: .3s;
+
+	&.active {
+		display: block;
+	}
+
+	&__wrap {
+		padding: 60px 3% 40px;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		border-radius: 15px;
+		background-color: #1a1a1a;
+
+		@media (max-width: 768px) {
+			padding-top: 40px;
+		}
+	}
+
+	/* ===== Filter ===== */
+	.list-filter {
+		position: relative;
+		display: flex;
+	}
+	.list-filter__item {
+		position: relative;
+		padding: 8px 18px;
+		border-radius: 10px 10px 0 0;
+		font-size: 20px;
+		font-weight: 500;
+		cursor: pointer;
+		z-index: 1;
+		color: #fff;
+		transition: 0.3s ease;
+		@media (hover: hover) {
+			&:hover {
+				background-color: #d2d2d233;
+			}
+		}
+	}
+
+	.filter-indicator {
+		position: absolute;
+		bottom: 5px;
+		height: 3px;
+		background: #d2d2d27c;
+		transition: all 0.3s ease;
+	}
+
+	/* ===== Portfolio grid ===== */
+	&__list {
+		display: grid;
+		gap: 30px;
+		padding: 35px 0;
+
+		/* По умолчанию адаптивно — карточки растягиваются, максимум 4 в ряд */
+		grid-template-columns: repeat(4, 1fr);
+
+
+		@media (max-width: 1199px) {
+			padding: calc(20px + 15 * (100vw - 320px) / 680) 0;
+			/* Адаптивно уменьшаем количество колонок */
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		}
+	}
+
+	/* ===== Portfolio item ===== */
+	.item-portf {
+		cursor: pointer;
+
+		&.html {
+			display: block;
+		}
+
+		&__body {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			border-radius: 5px;
+			box-shadow: 5px 5px var(--box-shadow-light);
+			transition: 1s;
+			z-index: 5;
+		}
+
+		/* ===== Browser bar ===== */
+		&__browser-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 22px;
+			padding: 0 10px;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			background: #e5e5e5;
+			border-bottom: 1px solid #d0d0d0;
+			z-index: 10;
+			transition: .3s ease;
+
+			span {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #bdbdbd;
+			}
+		}
+
+		&__img {
+			width: 100%;
+			height: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top;
+				transition: 1s;
+			}
+		}
+
+		&__content {
+			position: absolute;
+			inset: 0;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--transparent);
+			transform: translateY(130%);
+			transition: 1s;
+			z-index: 5;
+
+			> :not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+
+		&__title {
+			font-size: 20px;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-align: center;
+
+			span {
+				text-transform: none;
+				color: #ff6464;
+			}
+		}
+
+		&__list {
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -14px;
+				width: 4px;
+				height: 100%;
+				background-color: #ff6464;
+			}
+		}
+
+		&__list-item {
+			font-size: 15px;
+			line-height: 150%;
+
+			&:not(:last-child) {
+				margin-bottom: 7px;
+			}
+		}
+
+		&__btn {
+			margin-top: 10px;
+			width: 100%;
+			height: 50px;
+			padding: 5px;
+		}
+	}
+
+	/* ===== Hover ===== */
+	&__list-item:hover {
+		.item-portf__content {
+			transform: translateY(0);
+		}
+
+		.item-portf__img img {
+			transform: scale(1.2);
+		}
+
+		.item-portf__browser-bar {
+			opacity: 0;
+		}
+	}
+
+	.bottom-buttons {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		.list-filter {
+			justify-content: flex-start;
+			overflow-x: auto;
+			scrollbar-width: none;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.list-filter__item {
+			font-size: 16px;
+			padding: 8px 15px;
+
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+/* ===== Button ===== */
+.red-btn {
+	max-width: 270px;
+	padding: 20px;
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--almost-white);
+	background-color: #ce4541;
+	border: 2px solid #8a3330;
+	border-radius: 10px;
+	line-height: 145%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	transition: background-color .3s;
+	@media (hover: hover) {
+		&:hover {
+			background-color: #e02a2a;
+		}
+	}
+}
+
+/* ===== Portfolio fade animation ===== */
+.portfolio .fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity .6s ease, transform .6s ease;
+}
+
+.portfolio .fade-in.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Заголовок */
+.portfolio h2.fade-in {
+	transition-delay: .05s;
+}
+
+/* Фильтр */
+.portfolio .list-filter.fade-in {
+	transition-delay: .15s;
+}
+
+/* Карточки портфолио */
+.portfolio .item-portf.fade-in {
+	transition-delay: calc(var(--i) * 0.08s);
+}
+
+/* Кнопки снизу */
+.portfolio .bottom-buttons.fade-in {
+	transition-delay: .3s;
+}

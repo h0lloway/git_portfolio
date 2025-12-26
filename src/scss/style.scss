@@ -1,0 +1,63 @@
+@import 'base';
+@import 'layout';
+@import 'laptop';
+@import 'nav';
+@import 'home';
+@import 'about';
+@import 'skills';
+@import 'portfolio';
+@import 'contact';
+@import 'header';
+
+@import 'common';
+
+#alpha-banner {
+	max-width: 380px;
+	width: 100%;
+	position: fixed;
+	top: 16px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #1a1a1a;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 10px 14px;
+	border-radius: 10px;
+	box-shadow: 0 8px 20px rgba(134, 134, 134, 0.15);
+	font-size: 14px;
+	z-index: 9999;
+
+	/* 🔥 КЛЮЧЕВОЕ */
+	pointer-events: auto;
+}
+
+#alpha-banner i {
+	color: #6366f1;
+}
+
+.close-btn {
+	margin-left: 6px;
+	background: none;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+	color: #666;
+	transition: .3s ease;
+}
+
+.close-btn:hover {
+	color: #fff;
+}
+
+/* 📱 Мобилка */
+@media (max-width: 480px) {
+	#alpha-banner {
+		top: 10px;
+		font-size: 13px;
+		padding: 8px 12px;
+		width: calc(100% - 24px);
+	}
+}

@@ -1,0 +1,31 @@
+<section class="portfolio" id="portfolio">
+	<div class="portfolio__wrap">
+		<h2 class="heading-2 fade-in">Портфолио</h2>
+		<ul class="protfolio__list-filter fade-in list-filter">
+			<li class="list-filter__item" data-id="all"><span>Все</span></li>
+			<li class="list-filter__item" data-id="html"><span>Верстка</span></li>
+			<li class="list-filter__item" data-id="email"><span>Письма</span></li>
+			<li class="list-filter__item" data-id="vue"><span>Vue</span></li>
+			<li class="list-filter__item" data-id="js"><span>JavaScript</span></li>
+
+			<!-- ИНДИКАТОР сразу в разметке -->
+			<div class="filter-indicator"></div>
+		</ul>
+
+		<ul class="portfolio__list ">
+			{{#each portfolioData}}
+				{{> portfolio_card}}
+			{{/each}}
+		</ul>
+		<div class="bottom-buttons">
+			<button class="btn-main" data-open-tab="skills">
+				<i class="fa fa-arrow-left"></i> 
+				Навыки
+			</button>
+			<button class="btn-main" data-open-tab="contact">
+				Контакты 
+				<i class="fa fa-arrow-right"></i>
+			</button>
+		</div>
+	</div>
+</section>

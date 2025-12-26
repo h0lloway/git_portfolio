@@ -1,0 +1,167 @@
+#home.active {
+	display: flex;
+	gap: 15px;
+	@media screen and (max-width: 500px) {
+		gap: 10px;
+	}
+}
+
+#home {
+	min-height: 100vh;
+
+	.left {
+		background-color: #1a1a1a;
+
+		.left-title {
+			font-size: 64px;
+			line-height: 128%;
+			font-weight: 400;
+			margin-bottom: 50px;
+			@media screen and (max-width: 767px) {
+				font-size: 46px;
+			}
+			@media screen and (max-width: 500px) {
+				font-size: 36px;
+			}
+			.hand-hello {
+				animation: 4s cubic-bezier(.4, 0, .2, 1) infinite hello;
+			}
+
+			.animate {
+				opacity: 0;
+				transform: translateY(20px);
+				animation: fadeInUp 0.8s forwards;
+			}
+
+			.left-title {
+				&__hello {
+					white-space: nowrap;
+					p {
+						display: inline;
+					}
+				}
+			}
+
+			.left-title__hello.animate {
+				animation-delay: 0.2s;
+			}
+
+			.left-title__second.animate {
+				animation-delay: 0.4s;
+			}
+
+			.left-title__third.animate {
+				animation-delay: 0.6s;
+			}
+
+			.left-title__fours.animate {
+				animation-delay: 0.8s;
+			}
+
+			.left-title__fifth.animate {
+				animation-delay: 1s;
+			}
+		}
+
+		.btn-main {
+			font-size: 1.5rem;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			@media screen and (max-width:500px) {
+				font-size: 1rem;
+			}
+			&.btn-portfolio {
+				margin-bottom: 10px;
+				&.animate {
+					opacity: 0;
+					transform: translateY(20px);
+					animation: fadeInUp 0.8s forwards 1.4s;
+				}
+			}
+			&.btn-contacts {
+				&.animate {
+					opacity: 0;
+					transform: translateY(30px);
+					animation: fadeInUp 1.2s forwards 1.8s;
+				}
+			}
+		}
+	}
+
+	.right {
+		background-color: #242424;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.animate {
+			opacity: 0;
+			transform: translateY(20px);
+			animation: fadeInUp 0.8s forwards;
+		}
+
+		.dev-box.animate {
+			animation-delay: 0.4s;
+		}
+
+		.btn-main.animate {
+			animation-delay: 0.6s;
+		}
+
+		img {
+			width: 100%;
+			max-width: 300px;
+			margin-bottom: 20px;
+		}
+	}
+
+	@media screen and (max-width: 1199px) {
+		flex-direction: column;
+	}
+	@media screen and (max-width:500px) {
+		.hand-hello {
+			width: 40px;
+			height: 40px;
+		}
+	}
+}
+
+@keyframes hello {
+
+	0%,
+	72%,
+	to {
+		transform: rotate(8deg) translate3d(2px, 0, 0);
+	}
+
+	12%,
+	60% {
+		transform: rotate(-12deg) translate3d(-3px, 0, 0);
+	}
+
+	24% {
+		transform: rotate(16deg) translate3d(4px, 0, 0);
+	}
+
+	36% {
+		transform: rotate(-16deg) translate3d(-4px, 0, 0);
+	}
+
+	48% {
+		transform: rotate(12deg) translate3d(3px, 0, 0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

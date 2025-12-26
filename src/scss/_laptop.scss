@@ -1,0 +1,274 @@
+// font
+$font-size: 16px; // 8 * 2
+$font-family: menlo, monaco;
+
+// colors
+$font-clr: white;
+$laptop-clr: #3d3d3d;
+$laptop-clr2: #f5f5f5;
+$laptop-clr3: #9c9c9c;
+$screen-clr: #ace8e1;
+$screen-clr2: #dbfffb;
+$terminal-clr: #3f3f3f;
+$keyboard-clr: #585858;
+
+// measurements (x1.5)
+$terminal-height: 170px; // 85 * 2
+$terminal-width: 250px;  // 125 * 2
+$laptop-height: 250px;   // 125 * 2
+$laptop-width: 350px;    // 175 * 2
+$keyboard-height: 28px;  // 14 * 2
+$keyboard-width: 460px;  // 230 * 2
+$camera-size: 14px;      // 7 * 2
+
+@mixin center-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.laptop-wrap {
+	min-height: 335px;
+
+	.laptop {
+		height: $laptop-height;
+		width: $laptop-width;
+		@include center-flex;
+		border-radius: 11px 11px 0 0;
+		background-color: $laptop-clr;
+		box-shadow: 
+			0 0 0 2px black,
+			0 0 0 4.5px $laptop-clr2,
+			0 0 14px black;
+
+		// keyboard
+		&::before {
+			content: "";
+			position: absolute;
+			height: $keyboard-height;
+			width: $keyboard-width;
+			border-radius: 3px;
+			border-bottom: 5px solid $laptop-clr3;
+			background-color: $laptop-clr2;
+			transform: translateY(144px); // 72 * 2
+			box-shadow: 0px 3px 5px rgb(178, 193, 212);
+		}
+
+		// keyboard divit thing
+		&::after {
+			content: "";
+			position: absolute;
+			height: 6px;
+			width: 90px; // 45 * 2
+			border-radius: 0 0 3px 3px;
+			background-color: $laptop-clr3;
+			transform: translateY(131px); // 65.5 * 2
+		}
+
+		// screen
+		.laptop-screen {
+			height: $laptop-height * 0.86;
+			width: $laptop-width * 0.94;
+			background-image: linear-gradient(
+				45deg,
+				$screen-clr 65%,
+				$screen-clr2 65%
+			);
+
+			// camera
+			&::before {
+				content: "";
+				position: absolute;
+				height: $camera-size;
+				width: $camera-size;
+				border-radius: 50%;
+				background-image: radial-gradient(
+					#abebff 0 20%,
+					black 20% 50%,
+					#808080 50% 90%
+				);
+				left: 50%;
+				transform: translateX(-50%);
+				top: 2px;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				background-image: url('https://i.ibb.co/ksQpF9s2/work.png');
+				background-size: cover;
+				width: 150px;
+				height: 150px;
+				top: 35%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: .7;
+			}
+		}
+
+		// terminal
+		.laptop-terminal {
+			position: absolute;
+			height: $terminal-height;
+			width: $terminal-width;
+			border-radius: 3px 3px 0 0;
+			background-color: $terminal-clr;
+			border-top: 11px solid #545454;
+
+			&::before {
+				content: "🔴   🟡   🟢 ~/ code / css-stuff";
+				position: absolute;
+				color: white;
+				font-size: 5px;
+				transform: translateX(8px) translateY(-9px);
+			}
+		}
+	}
+
+	p {
+		width: 1ch;
+		padding: 8px;
+		color: $font-clr;
+		font-size: $font-size;
+		font-family: $font-family;
+		border-right: 2px solid $font-clr;
+		margin: 0;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	// typing animation
+	@keyframes typing-animation {
+		20%,
+		100% {
+			width: 60%;
+		}
+	}
+
+	@keyframes blink {
+		50% {
+			border-color: transparent;
+		}
+	}
+
+	.laptop > .laptop-terminal > p {
+		animation: typing-animation 4s steps(15) infinite, blink 1s infinite;
+	}
+}
+
+// ===================
+// MOBILE ≤ 767px (×1.5)
+// ===================
+
+@media screen and (max-width: 767px) {
+	.laptop-wrap {
+		min-height: 270px;
+
+		.laptop {
+			height: 188px;
+			width: 263px;
+			border-radius: 11px 11px 0 0;
+
+			&::before {
+				height: 21px;
+				width: 345px;
+				border-bottom: 5px solid $laptop-clr3;
+				transform: translateY(108px);
+			}
+
+			&::after {
+				height: 6px;
+				width: 68px;
+				transform: translateY(98px);
+			}
+
+			.laptop-screen {
+				height: 162px;
+				width: 247px;
+				&::before {
+					height: 11px;
+					width: 11px;
+					top: 2px;
+				}
+				&::after {
+					top: 30%;
+					width: 100px;
+					height: 100px;
+				}
+			}
+
+			.laptop-terminal {
+				height: 128px;
+				width: 188px;
+				border-top: 11px solid #545454;
+
+				&::before {
+					font-size: 4px;
+					transform: translateX(6px) translateY(-8px);
+				}
+			}
+		}
+
+		p {
+			font-size: 12px;
+			padding: 6px;
+			border-right: 2px solid $font-clr;
+		}
+	}
+}
+// ===================
+// SMALL MOBILE ≤ 500px (MAX WIDTH 310px)
+// ===================
+
+@media (max-width: 500px) {
+	.laptop-wrap {
+		min-height: 280px;
+
+		.laptop {
+			height: 175px;   // уменьшено
+			width: 245px;    // БАЗА (меньше 310)
+			border-radius: 9px 9px 0 0;
+
+			// keyboard (НЕ ВЫЛЕЗАЕТ)
+			&::before {
+				height: 19px;
+				width: 310px; // максимум
+				border-bottom: 4px solid $laptop-clr3;
+				transform: translateY(98px);
+			}
+
+			&::after {
+				height: 5px;
+				width: 62px;
+				transform: translateY(90px);
+			}
+
+			.laptop-screen {
+				height: 150px;
+				width: 230px;
+
+				&::before {
+					height: 10px;
+					width: 10px;
+					top: 2px;
+				}
+			}
+
+			.laptop-terminal {
+				height: 105px;
+				width: 155px;
+				border-top: 9px solid #545454;
+
+				&::before {
+					font-size: 4px;
+					transform: translateX(6px) translateY(-7px);
+				}
+			}
+		}
+
+		p {
+			font-size: 11px;
+			padding: 5px;
+			border-right: 1.5px solid $font-clr;
+		}
+	}
+}

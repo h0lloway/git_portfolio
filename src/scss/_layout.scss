@@ -1,0 +1,20 @@
+main {
+	display: flex;
+	flex-direction: column;
+	margin-left: 100px; /* ширина nav */
+	@media(max-width: 768px) {
+		padding-top: 60px; // тут в зависимости от высоты header
+		margin-left: 0;
+	}
+}
+
+section {
+	display: none;
+	padding: 20px;
+	&.active {
+		display: flex;
+	}
+	@media screen and (max-width:500px) {
+		padding: 10px;
+	}
+}
