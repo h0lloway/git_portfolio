@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/git_portfolio/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>asd</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script type="module" crossorigin src="/git_portfolio/assets/index-32n6RT-V.js"></script>
+  <link rel="stylesheet" crossorigin href="/git_portfolio/assets/index-xV89ABy2.css">
+</head>
+
+<body>
+	<!-- страница в работе -->
+	<div id="alpha-banner">
+		<i class="fa-solid fa-flask"></i>
+		<span>Дизайн и функционал ещё дорабатываются</span>
+		<button class="close-btn" aria-label="Закрыть">&times;</button>
+	</div>
+	
+	<nav>
+		<div class="logo">
+			<!-- <img src="https://h0lloway.github.io/my-portfolio/img/memoji-.png" alt="Лого"> -->
+			<svg width="60" height="60" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+				<!-- Квадрат с темным фоном -->
+				<rect class="color-anim" x="1" y="1" width="28" height="28" rx="4" ry="4" fill="#222" stroke="" stroke-width="2"
+					stroke-linejoin="miter" />
+
+				<!-- Логотип MD с светлой обводкой -->
+				<g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<!-- Буква M -->
+					<path d="M5,22 L5,8 L10,16 L15,8 L15,22" />
+
+					<!-- Буква D, правая палка M = левая стенка D -->
+					<path d="M15,8 
+							L15,22 
+							C15,22 23,22 23,15 
+							C23,8 15,8 15,8 Z" />
+				</g>
+			</svg>
+
+		</div>
+		<div class="nav-buttons">
+			<div class="nav-indicator"></div>
+
+			<button class="nav-button active" data-target="home"><i class="fas fa-home"></i></button>
+			<button class="nav-button" data-target="about"><i class="fas fa-user"></i></button>
+			<button class="nav-button" data-target="skills"><i class="fas fa-code"></i></button>
+			<button class="nav-button" data-target="portfolio"><i class="fas fa-briefcase"></i></button>
+			<button class="nav-button" data-target="contact"><i class="fas fa-envelope"></i></button>
+		</div>
+	</nav>
+	<main>
+		<!-- ====== Главная ====== -->
+		<section id="home" class="active">
+			<div class="left">
+				<h1 class="left-title">
+					<div class="left-title__hello animate">
+						<p id="hi">Доброй ночи!</p>
+						<img class="hand-hello" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAAIW0lEQVRo3t1bW2wUVRiu4A0DaiRqiIrRJw3GG0ZNvMbExEuM+OCDL5hIiKgxGgGNDxrUhMQnfMAHggZRJGZ3dqGUS6HbnV627Xa73UtLoXtrt7soYIAgUNidmZ3j/5+Z2W7bmTOzOzMtYZJJoDkzc75zzv//3//9/zY1uXwRQhZWcvwOOd97gRQiFXmi75KU6/CSaPSGpmvtArDXyeOhMXIiSmbelfHuk9ccaCnDb9UDWwWdDe68pgBXxkOnWYDl8Z5zlk5KJviSmAluJrn2daToWTSnIC4nffcKcc/jJNS8xGysPBGeZAKeCAus58uZ0AowiZPTnimEJTHLr3cdqBDjnirHubgw1Aw7EyKkOEDkse44OR5Yagy477IJYNFwV2En5Xyf/oIVwrKQ9D3pGthylHsIwE4iWFKMzDiWsAPgnAwAX2kUMMv+K7kOAvM54B7gONcCN3yo08D5dGx0GnAlHzph9Jx4/DACvuhSaNm0AF5eQsCk2K8/8bHutJOAyQi/GExGNnpOSO5FwOfdAczz18PLBQr4xID+xMGROAlYTPHrGc8gWLwjLh5pXz9+BMKI4eTFbOA1pwBLuc4B49jNq4C9m93z0HHvFvyIlG43nDzQRY9TgOG5kuHCHjtEAV9J+l9xb4cTvnfwI+LIfgaJCP3jBGCS4Z9lPVNO7kHAk4TfcbN7nDi+53b4iATAafzVnQw6mWjLLXYBVzIdfxqOz/cqxznGtbpOPOBDYRqaxkLGxzrbsdYu4JnMatr7waRwDqW4d4P7gGPeH6gdp44w7LgzaAewWTgSRw5QwELM/5j9YzvSeoeUCq6WUoFVhHgWzgoVMd+L9GPD+wjjyJ23Axg88Abj8QOknPATIc6dNmJ21rOaDL8LKKNcM5GyNBpYM31BPDciu4EQBVy233BSJN+1rFHAMiMcIX9X4+9um7bpfRcmpuOEIrKQPbxyxtj91I6znYTBc79rGDAjHEnpgHKcE9wHdkNOVBw5aEAZu8Zrx5bivs9peBptNQY81hlvBLCYDT7HGiscbVHib9Sz3K73vax4327dIyqkAh9PLQ63gq7y0F4GiL5SI4ClbHC34VgIhWhK8O1RJ8JNRgHRrMuVwRFNatoTOgs41n9Tmgmc1nA3ssGV9QJmhaPKWJdynOPcVid48teqMzCkjpU0v6Nml3+nJyITZGhVHdvqAUxGQ0tY4UgaPaI5rFX2w1GvZxG8KE9fCExK1vHA8LcKGWlbrigf3tXUjo8dZNHMXD2AxUz7V0z7hdMH3xRJ1HObQ6SCe0/bZfH4If3J5TppOjYZ9S2DcXI56QfbMgBSjFTg+C+wCljOdUUNxxQi6u76eh3Vj0txLqSBppqVjgOTUu2vq3Y/bJYukiy/yjLgfLhsIufg6fve2RQwwT0BL65U2VRRL0yF/p2WLqYCDF7dtccKYDHHP88ao8o5REx6X3CBL3O/aruMibbuiqf4TRCP36QLc5SVLvactgIYvvMX236pnHOBRLc5X6W4mPTfhVqRcoTARguR2ZMA2kmGm++mOleC0x+j2DGM7S+bAYaFOWVBzmlxU875shqmRo8YqRv7YJc7FMLSRViEnwUYREFJLkaMw1uGV9NB7jP3kv3MwZs0MoI7CAKdHhBZGm7+hS4KIx7bvTH0qfNYYXX+YjrwKqSpnSDin8dwimEWnaLGDYwSirerYcqAN4NGfQ7lUhbjsncr6SAyOyvpYHn40KNKpXKARYi2M5IKrk+Nfy6CYth3vkez3z9M09t04EOsPZu9U0q3nTJ8CdjNG1VbZoQft25MQRX+7N3CLMmm+PdZtHRGennJNHVU4nLzPADuMAWMMZyyOjOw4GcssTXY5U+q7EtPJJhHwORY+/3gmErWwXLilbj3ZbbHjnnuxIFm2dFcA0Y5GNLWM1bfgdxfiPnWWKwLe9uVpKJ1ngBzP82ScqF4Z+15nwqWW1eP5rXJTK1002mJg9790+tOXe2mz0JZFzkEJS0J7ou6iEgpyb2lBP897oci8BPI7tBJar4DHKeMiy4kPE+DPR42B9ul7SxWKL6tv6cj4blHi8emVNEGUBQSqxPFEwU1JPybCAuAi6Cfss6Ugrpr3uH9seFcWXNcRgXxhu+iWj5JqJMEkBjzGyE6VLemzIyWYn62K/SdMRPuGqGOWukT7Y2Sm2JjJwiFCA0s7PBO7FpwRNnE6p1zYNU6EfLxfI89CqqBjXE+7FhwQhgYVJpauh0BrKmQmNzbITTyBJRPk1WwrZjpOdQBwAXNOgAshxtVY8aJ2gKb76OOTY3VbY4WyDXpR2RIOlaPstqBw6xPme9suAoW+TEU+hY7KgqUYr5Pq6liIdL47qoKBqt1whJYRefCe4CEd93qvOyT9D9iVp2wcmsTtRJT9TXqfk2UR5sdIv3+pW62PAxrsbKR8KH1ZzRMUREsPKsufBoLAm43l340Je611e+ZM+2qmNDWAEGJ1IIdvzy89z7XezxoR16CO14V9+o8lpogx2qKMQbbooE9URryPThnvdLYLVDLdeWCdaqpTbquUIRg1UI49naUB/0PN831BXr09ipo7J0uhOtyWJbtH6IBhkH1W+dd7Y+2oFv3TO20NWqImY9gMY6jg6ux2f+EJPdM03xeakkmXM1ZIT6jKmg7fYQjTNVFNXsCeefUvO2swU7/NgVasWvoZJ/VNW8lvkrpIDzvJzWL2H8l6Xmg6Wq7wJmshQmerQWOO4RHGMFj6qY4t4Fqgwr+H363REkMsi5NjlHvs6iWEs/s5rir5qLNpzHvNxg2pgGv785gIc8VqugacEi8aYsiVOvxRxgYt2k4ifvOTbtjXAF/IQP/9sBubhQGPSvnao7/A/IF6Nk4nVHFAAAAAElFTkSuQmCC" alt="hello">
+					</div>
+					<span class="left-title__second animate">Я</span>
+					<span class="left-title__third animate"><i class="color-anim">Максим</i></span><span
+						class="left-title__fours animate">,</span>
+					<div class="left-title__fifth animate"><strong>фронтенд разработчик</strong></div>
+				</h1>
+				<button class="btn-main animate" data-open-tab="portfolio">
+					<i class="fas fa-briefcase"></i><span>Портфолио</span>
+				</button>
+			</div>
+			<div class="right animate-container">
+				<div class="dev-box laptop-wrap animate">
+					<!-- <img src="img/work.png" alt="development image"> -->
+					<div class="laptop">
+						<div class="laptop-screen"></div>
+					</div>
+				</div>
+				<button class="btn-main animate" data-open-tab="about">Обо мне</button>
+			</div>
+		</section>
+
+
+		<!-- ====== Обо мне ====== -->
+		<section id="about">
+			<div class="left">
+				<h2 class="heading-2 fade-in">Обо мне</h2>
+				<p class="text text-xl fade-in">Я программист, занимаюсь фронтенд разработкой. Создаю проекты и воплощаю
+					в жизнь UI/UX идеи. Живу в Ростове-на-Дону</p>
+				<div class="about-features fade-in">
+					<div class="feature-item fade-in">
+						<i class="fas fa-code"></i>
+						<p>Опыт разработки 3 года</p>
+					</div>
+					<div class="feature-item fade-in">
+						<i class="fas fa-user-check"></i>
+						<p>Организованный и автономный</p>
+					</div>
+					<div class="feature-item fade-in">
+						<i class="fas fa-heart"></i>
+						<p>Люблю программировать</p>
+					</div>
+					<div class="feature-item fade-in">
+						<i class="fas fa-graduation-cap"></i>
+						<p>Постоянно учусь</p>
+					</div>
+					<div class="feature-item fade-in">
+						<i class="fas fa-star"></i>
+						<p>Склонный к перфекционизму</p>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right__content fade-in">
+					<img src="https://h0lloway.github.io/my-portfolio/img/me-squ.webp" alt="Моя фотография">
+					<div class="social-links fade-in">
+						<a href="#" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+						<a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+						<a href="#" title="VK"><i class="fab fa-vk"></i></a>
+						<a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+						<a href="#" title="HH"><i class="fas fa-briefcase"></i></a>
+					</div>
+				</div>
+				<div class="bottom-buttons fade-in navigation-btns">
+					<button class="btn-main" data-open-tab="home">
+						<i class="fa fa-arrow-left"></i> Главная
+					</button>
+					<button class="btn-main" data-open-tab="skills">
+						Навыки <i class="fa fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- ====== Навыки ====== -->
+		<section id="skills">
+			<div class="left">
+				<h2 class="heading-2 fade-in">Навыки</h2>
+				<p class="text text-xl fade-in">
+					Разрабатываю сайты и лендинги, верстаю письма любой сложности.
+					Любимый стек — Vue + Vite + Blade: с ним легко создавать интерактивные элементы и держать проект под
+					контролем.
+				</p>
+				<div class="skills-features fade-in">
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-check-circle"></i>
+						<p>Создаю надежные и правильно работающие интерфейсы</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-bolt"></i>
+						<p>Пишу современный и производительный код</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-lightbulb"></i>
+						<p>Выбираю простой способ решения задачи</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-code"></i>
+						<p>Верстаю семантично, кроссбраузерно и pixel-perfect</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-layer-group"></i>
+						<p>Использую актуальные фреймворки, библиотеки и инструменты</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-magic"></i>
+						<p>Реализую адаптивный интерфейс и анимации</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-align-left"></i>
+						<p>Соблюдаю единый стиль кода</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-sync-alt"></i>
+						<p>Оптимизирую, тестирую и рефакторю</p>
+					</div>
+					<div class="skills-feature-item fade-in">
+						<i class="fas fa-tasks"></i>
+						<p>Планирую и декомпозирую задачи</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="right">
+				<div class="skills-list accordion" id="skillsAccordion">
+
+					<!-- Логика -->
+					<div class="skill-category item fade-in" aria-expanded="true">
+						<button class="skill-category-btn header" aria-expanded="true">
+							<span>Логика</span>
+							<i class="fas fa-chevron-right chev"></i>
+						</button>
+						<div class="skill-items panel">
+							<div class="skill-items__wrap inner">
+								<div class="skill-item"><i class="fab fa-js"></i>
+									<p>JavaScript</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-code"></i>
+									<p>PHP</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-layer-group"></i>
+									<p>Babel</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-project-diagram"></i>
+									<p>GSAP</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Разметка -->
+					<div class="skill-category item fade-in" aria-expanded="false">
+						<button class="skill-category-btn header" aria-expanded="false">
+							<span>Разметка</span>
+							<i class="fas fa-chevron-right chev"></i>
+						</button>
+						<div class="skill-items panel">
+							<div class="skill-items__wrap inner">
+								<div class="skill-item"><i class="fab fa-html5"></i>
+									<p>HTML5</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-pug"></i>
+									<p>Pug</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-wordpress"></i>
+									<p>WordPress</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-js"></i>
+									<p>jQuery</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Стили -->
+					<div class="skill-category item fade-in" aria-expanded="false">
+						<button class="skill-category-btn header" aria-expanded="false">
+							<span>Стили</span>
+							<i class="fas fa-chevron-right chev"></i>
+						</button>
+						<div class="skill-items panel">
+							<div class="skill-items__wrap inner">
+								<div class="skill-item"><i class="fab fa-css3-alt"></i>
+									<p>CSS3</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-sass"></i>
+									<p>Sass</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-less"></i>
+									<p>Less</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-bootstrap"></i>
+									<p>Bootstrap</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-wind"></i>
+									<p>Tailwind</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-vector-square"></i>
+									<p>SVG</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Утилиты -->
+					<div class="skill-category item fade-in" aria-expanded="false">
+						<button class="skill-category-btn header" aria-expanded="false">
+							<span>Утилиты</span>
+							<i class="fas fa-chevron-right chev"></i>
+						</button>
+						<div class="skill-items panel">
+							<div class="skill-items__wrap inner">
+								<div class="skill-item"><i class="fab fa-git-alt"></i>
+									<p>Git</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-npm"></i>
+									<p>npm</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-node-js"></i>
+									<p>Node</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-docker"></i>
+									<p>Docker</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-bolt"></i>
+									<p>Vite</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-gulp"></i>
+									<p>Gulp</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-cubes"></i>
+									<p>Webpack</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-yarn"></i>
+									<p>Yarn</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-check-double"></i>
+									<p>ESLint</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-paint-brush"></i>
+									<p>Prettier</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Разное -->
+					<div class="skill-category item fade-in" aria-expanded="false">
+						<button class="skill-category-btn header" aria-expanded="false">
+							<span>Разное</span>
+							<i class="fas fa-chevron-right chev"></i>
+						</button>
+						<div class="skill-items panel">
+							<div class="skill-items__wrap inner">
+								<div class="skill-item"><i class="fab fa-vuejs"></i>
+									<p>Vue</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-file-code"></i>
+									<p>Blade</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-diagram-project"></i>
+									<p>BEM</p>
+								</div>
+								<div class="skill-item"><i class="fab fa-figma"></i>
+									<p>Figma</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-image"></i>
+									<p>Photoshop</p>
+								</div>
+								<div class="skill-item"><i class="fas fa-tshirt"></i>
+									<p>Tilda</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="right__btns fade-in navigation-btns">
+					<button class="btn-main" data-open-tab="about">
+						<i class="fa fa-arrow-left"></i> Обо мне
+					</button>
+					<button class="btn-main" data-open-tab="portfolio">
+						Портфолио <i class="fa fa-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- ====== Портфолио ====== -->
+		<section class="portfolio" id="portfolio">
+			<h2 class="heading-2">Портфолио</h2>
+			<ul class="protfolio__list-filter list-filter list-reset element-animation element-show">
+				<li class="list-filter__item" data-id="all">Все</li>
+				<li class="list-filter__item active" data-id="html">Верстка</li>
+				<li class="list-filter__item" data-id="email">Письма</li>
+				<li class="list-filter__item" data-id="vue">Vue</li>
+				<li class="list-filter__item" data-id="js">JavaScript</li>
+			</ul>
+			<ul class="portfolio__list list-reset ">
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/premier-page.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span>PREMIER</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">HTML + CSS</li>
+								<li class="item-portf__list-item">Функционал: Слайдер, модальное окно</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/premier-page/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/lofty.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span>Test page</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">HTML + CSS</li>
+								<li class="item-portf__list-item">Функционал: Слайдер на маленьком разрешении</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/lofty-test/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/premier-mail.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>PREMIER</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Адаптивно</li>
+								<li class="item-portf__list-item">Функционал: email-рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/premier-email/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/mailfit.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Spim.ru</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Адаптивно</li>
+								<li class="item-portf__list-item">Функционал: email-рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/mailfit-email/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/enver_studio.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span><br></span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">HTML + CSS</li>
+								<li class="item-portf__list-item">Функционал: Слайдер</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/enver_studio/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation vue element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/form-vue2.png" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Vue приложение
+								<br><span><br></span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Приложение</li>
+								<li class="item-portf__list-item">Vue + Vite</li>
+								<li class="item-portf__list-item">Функционал: переключение опросника в форме</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://form-dubrovin.netlify.app/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation vue element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/portfolio1.png" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Vue приложение
+								<br><span>Портфолио</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Приложение</li>
+								<li class="item-portf__list-item">Vue + Vite</li>
+								<li class="item-portf__list-item">Функционал: toggle меню на маленьком разрешении</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://dubrovin-portfolio.netlify.app/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/SDP.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Сайт магазина мебели
+								<br><span>SitDownPls</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Слайдер, табы, модальные окна, селекты
+								</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/SitDownPls__makdu/"
+								target="_blank">
+								На сайт
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/blanchard.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Страница галереи
+								<br><span>Blanchard - галерея</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex)</li>
+								<li class="item-portf__list-item">Функционал: Слайдер, табы, модальные окна, аккордион
+								</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/diplom_blanchard/"
+								target="_blank">
+								На сайт
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/lorem-skrin.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Тест
+								<br><span>Loremipsun.net</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Choices, rangeslider</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/ccs-test/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/ЭПА.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span>Экспертно-Правовое Агенство</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex)</li>
+								<li class="item-portf__list-item">Функционал: Табы, аккордеон, слайдеры, модальные окна
+								</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/EPA/" target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/psycho.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span>Корпорация психологии</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Слайдер цены, бургер меню, модальные окна,
+									табы</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/psychologists_v2/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/hilding-letter.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Hilding Anders</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Резиново</li>
+								<li class="item-portf__list-item">Функционал: email-рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/hilding-letter/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/gamevendor.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Интернет-магазин
+								<br><span>GameVendor</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Слайдер, селекты, добавление карточки,
+									аккордион</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/gameVendor_page/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/tectum.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Веб-интерфейс
+								<br><span>Tectum</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(bootstrap)</li>
+								<li class="item-portf__list-item">Функционал: Адаптивная таблица, бургер меню, кастомные
+									селекты</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/tectum/"
+								target="_blank">
+								На сайт
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/rosseti-letter.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Rosseti</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Резиново</li>
+								<li class="item-portf__list-item">Функционал: email-рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/rosseti-letter/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/for-teachers.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Landing page
+								<br><span>Мы - учителям</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Слайдеры, бургер меню</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/for-teachers/"
+								target="_blank">На
+								сайт</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/highpass.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Сайт фотостудии
+								<br><span>HighPass</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Сайт фотостудии</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/high-pass-work/"
+								target="_blank">
+								На сайт
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/furino.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Интернет-магазин
+								<br><span>Furino</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Адаптивная верстка</li>
+								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
+								<li class="item-portf__list-item">Функционал: Слайдер, кнопки, галерея</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/Furino/"
+								target="_blank">
+								На сайт
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/eldorado.webp" alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Эльдорадо</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Адаптивно</li>
+								<li class="item-portf__list-item">Функционал: Рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/testmaileldorado/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/htmlletter.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Software depot</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Резиново</li>
+								<li class="item-portf__list-item">Функционал: Рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/software-depot-letter/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/blanchard-letter.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								HTML письмо
+								<br><span>Blanchard</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: Верстка</li>
+								<li class="item-portf__list-item">Адаптивно</li>
+								<li class="item-portf__list-item">Функционал: Рассылка</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/blanchard-letter/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="portfolio__list-item item-portf element-animation js element-show" style="display: none;">
+					<div class="item-portf__body">
+						<div class="item-portf__browser-bar">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="item-portf__img">
+							<img src="https://h0lloway.github.io/my-portfolio/img/Игра пары числе.webp"
+								alt="Скриншот работы">
+						</div>
+						<div class="item-portf__content">
+							<h3 class="item-portf__title">
+								Игра
+								<br><span>Пары чисел</span>
+							</h3>
+							<ul class="item-portf__list list-reset">
+								<li class="item-portf__list-item">Работа: JavaScript</li>
+								<li class="item-portf__list-item"></li>
+								<li class="item-portf__list-item">Функционал: Игра</li>
+							</ul>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/couple_game/"
+								target="_blank">Смотреть</a>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+			<div class="bottom-buttons">
+				<button class="btn-main" data-open-tab="skills">
+					<i class="fa fa-arrow-left"></i> Навыки
+				</button>
+				<button class="btn-main" data-open-tab="contact">
+					Контакты <i class="fa fa-arrow-right"></i>
+				</button>
+			</div>
+		</section>
+
+
+		<!-- ====== Контакты ====== -->
+		<section id="contact">
+			<div class="left">
+				<h2 class="heading-2">Контакты</h2>
+				<ul class="social-list">
+					<li><a href="mailto:example@example.com">✉️ Email</a></li>
+					<li><a href="tel:+79991234567">📞 Телефон</a></li>
+					<li><a href="#">💬 Telegram</a></li>
+					<li><a href="#">📱 WhatsApp</a></li>
+					<li><a href="#">🔗 LinkedIn</a></li>
+				</ul>
+				<button class="btn-main" data-open-tab="portfolio">Портфолио</button>
+			</div>
+
+
+			<div class="right">
+				<div class="dev-box">
+					<img src="/git_portfolio/assets/work-DxnpvNsx.png" alt="development image">
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+</body>
+
+</html>
