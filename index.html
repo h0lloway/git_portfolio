@@ -8,8 +8,8 @@
 	<title>asd</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <script type="module" crossorigin src="/git_portfolio/assets/index-32n6RT-V.js"></script>
-  <link rel="stylesheet" crossorigin href="/git_portfolio/assets/index-xV89ABy2.css">
+  <script type="module" crossorigin src="/git_portfolio/assets/index-D-UljFHz.js"></script>
+  <link rel="stylesheet" crossorigin href="/git_portfolio/assets/index-BaiNo0cp.css">
 </head>
 
 <body>
@@ -19,17 +19,28 @@
 		<span>Дизайн и функционал ещё дорабатываются</span>
 		<button class="close-btn" aria-label="Закрыть">&times;</button>
 	</div>
-	
+	<button class="burger" aria-label="Open menu">
+		<i class="fas fa-bars"></i>
+	</button>
+
+	<div class="nav-overlay"></div>
+
 	<nav>
+		<div class="nav-header">
+			<button class="nav-back">
+				<i class="fas fa-arrow-left"></i>
+			</button>
+		</div>
+
 		<div class="logo">
-			<!-- <img src="https://h0lloway.github.io/my-portfolio/img/memoji-.png" alt="Лого"> -->
 			<svg width="60" height="60" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
 				<!-- Квадрат с темным фоном -->
 				<rect class="color-anim" x="1" y="1" width="28" height="28" rx="4" ry="4" fill="#222" stroke="" stroke-width="2"
 					stroke-linejoin="miter" />
 
 				<!-- Логотип MD с светлой обводкой -->
-				<g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<g style="transform: translateX(1.5px);" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+					stroke-linejoin="round">
 					<!-- Буква M -->
 					<path d="M5,22 L5,8 L10,16 L15,8 L15,22" />
 
@@ -40,8 +51,8 @@
 							C23,8 15,8 15,8 Z" />
 				</g>
 			</svg>
-
 		</div>
+
 		<div class="nav-buttons">
 			<div class="nav-indicator"></div>
 
@@ -52,6 +63,7 @@
 			<button class="nav-button" data-target="contact"><i class="fas fa-envelope"></i></button>
 		</div>
 	</nav>
+
 	<main>
 		<!-- ====== Главная ====== -->
 		<section id="home" class="active">
@@ -80,8 +92,6 @@
 				<button class="btn-main animate" data-open-tab="about">Обо мне</button>
 			</div>
 		</section>
-
-
 		<!-- ====== Обо мне ====== -->
 		<section id="about">
 			<div class="left">
@@ -132,8 +142,6 @@
 				</div>
 			</div>
 		</section>
-
-
 		<!-- ====== Навыки ====== -->
 		<section id="skills">
 			<div class="left">
@@ -182,10 +190,10 @@
 					</div>
 				</div>
 			</div>
-
+		
 			<div class="right">
 				<div class="skills-list accordion" id="skillsAccordion">
-
+		
 					<!-- Логика -->
 					<div class="skill-category item fade-in" aria-expanded="true">
 						<button class="skill-category-btn header" aria-expanded="true">
@@ -209,7 +217,7 @@
 							</div>
 						</div>
 					</div>
-
+		
 					<!-- Разметка -->
 					<div class="skill-category item fade-in" aria-expanded="false">
 						<button class="skill-category-btn header" aria-expanded="false">
@@ -233,7 +241,7 @@
 							</div>
 						</div>
 					</div>
-
+		
 					<!-- Стили -->
 					<div class="skill-category item fade-in" aria-expanded="false">
 						<button class="skill-category-btn header" aria-expanded="false">
@@ -263,7 +271,7 @@
 							</div>
 						</div>
 					</div>
-
+		
 					<!-- Утилиты -->
 					<div class="skill-category item fade-in" aria-expanded="false">
 						<button class="skill-category-btn header" aria-expanded="false">
@@ -305,7 +313,7 @@
 							</div>
 						</div>
 					</div>
-
+		
 					<!-- Разное -->
 					<div class="skill-category item fade-in" aria-expanded="false">
 						<button class="skill-category-btn header" aria-expanded="false">
@@ -335,9 +343,9 @@
 							</div>
 						</div>
 					</div>
-
+		
 				</div>
-
+		
 				<div class="right__btns fade-in navigation-btns">
 					<button class="btn-main" data-open-tab="about">
 						<i class="fa fa-arrow-left"></i> Обо мне
@@ -348,7 +356,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- ====== Портфолио ====== -->
 		<section class="portfolio" id="portfolio">
 			<h2 class="heading-2">Портфолио</h2>
@@ -368,8 +375,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/premier-page.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/premier-page.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -381,13 +387,12 @@
 								<li class="item-portf__list-item">HTML + CSS</li>
 								<li class="item-portf__list-item">Функционал: Слайдер, модальное окно</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/premier-page/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/premier-page/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -408,13 +413,12 @@
 								<li class="item-portf__list-item">HTML + CSS</li>
 								<li class="item-portf__list-item">Функционал: Слайдер на маленьком разрешении</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/lofty-test/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/lofty-test/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -423,8 +427,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/premier-mail.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/premier-mail.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -441,7 +444,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -467,7 +470,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -476,8 +479,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/enver_studio.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/enver_studio.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -489,13 +491,12 @@
 								<li class="item-portf__list-item">HTML + CSS</li>
 								<li class="item-portf__list-item">Функционал: Слайдер</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/enver_studio/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/enver_studio/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation vue element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -516,13 +517,12 @@
 								<li class="item-portf__list-item">Vue + Vite</li>
 								<li class="item-portf__list-item">Функционал: переключение опросника в форме</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://form-dubrovin.netlify.app/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://form-dubrovin.netlify.app/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation vue element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -543,13 +543,12 @@
 								<li class="item-portf__list-item">Vue + Vite</li>
 								<li class="item-portf__list-item">Функционал: toggle меню на маленьком разрешении</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://dubrovin-portfolio.netlify.app/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://dubrovin-portfolio.netlify.app/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -571,14 +570,13 @@
 								<li class="item-portf__list-item">Функционал: Слайдер, табы, модальные окна, селекты
 								</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/SitDownPls__makdu/"
-								target="_blank">
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/SitDownPls__makdu/" target="_blank">
 								На сайт
 							</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -600,14 +598,13 @@
 								<li class="item-portf__list-item">Функционал: Слайдер, табы, модальные окна, аккордион
 								</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/diplom_blanchard/"
-								target="_blank">
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/diplom_blanchard/" target="_blank">
 								На сайт
 							</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -616,8 +613,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/lorem-skrin.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/lorem-skrin.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -629,13 +625,12 @@
 								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
 								<li class="item-portf__list-item">Функционал: Choices, rangeslider</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/ccs-test/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/ccs-test/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -662,7 +657,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -684,13 +679,12 @@
 								<li class="item-portf__list-item">Функционал: Слайдер цены, бургер меню, модальные окна,
 									табы</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/psychologists_v2/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/psychologists_v2/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -699,8 +693,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/hilding-letter.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/hilding-letter.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -717,7 +710,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -726,8 +719,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/gamevendor.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/gamevendor.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -740,13 +732,12 @@
 								<li class="item-portf__list-item">Функционал: Слайдер, селекты, добавление карточки,
 									аккордион</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/gameVendor_page/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/gameVendor_page/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -768,14 +759,13 @@
 								<li class="item-portf__list-item">Функционал: Адаптивная таблица, бургер меню, кастомные
 									селекты</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/tectum/"
-								target="_blank">
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/tectum/" target="_blank">
 								На сайт
 							</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -784,8 +774,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/rosseti-letter.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/rosseti-letter.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -802,7 +791,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -811,8 +800,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/for-teachers.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/for-teachers.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -824,13 +812,12 @@
 								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
 								<li class="item-portf__list-item">Функционал: Слайдеры, бургер меню</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/for-teachers/"
-								target="_blank">На
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/for-teachers/" target="_blank">На
 								сайт</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -851,14 +838,13 @@
 								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
 								<li class="item-portf__list-item">Функционал: Сайт фотостудии</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/high-pass-work/"
-								target="_blank">
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/high-pass-work/" target="_blank">
 								На сайт
 							</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation html element-show" style="display: block;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -879,14 +865,13 @@
 								<li class="item-portf__list-item">HTML + CSS(flex + grid)</li>
 								<li class="item-portf__list-item">Функционал: Слайдер, кнопки, галерея</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/Furino/"
-								target="_blank">
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/Furino/" target="_blank">
 								На сайт
 							</a>
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -912,7 +897,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -921,8 +906,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/htmlletter.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/htmlletter.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -939,7 +923,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation email element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -948,8 +932,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/blanchard-letter.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/blanchard-letter.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -966,7 +949,7 @@
 						</div>
 					</div>
 				</li>
-
+		
 				<li class="portfolio__list-item item-portf element-animation js element-show" style="display: none;">
 					<div class="item-portf__body">
 						<div class="item-portf__browser-bar">
@@ -975,8 +958,7 @@
 							<span></span>
 						</div>
 						<div class="item-portf__img">
-							<img src="https://h0lloway.github.io/my-portfolio/img/Игра пары числе.webp"
-								alt="Скриншот работы">
+							<img src="https://h0lloway.github.io/my-portfolio/img/Игра пары числе.webp" alt="Скриншот работы">
 						</div>
 						<div class="item-portf__content">
 							<h3 class="item-portf__title">
@@ -988,12 +970,11 @@
 								<li class="item-portf__list-item"></li>
 								<li class="item-portf__list-item">Функционал: Игра</li>
 							</ul>
-							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/couple_game/"
-								target="_blank">Смотреть</a>
+							<a class="item-portf__btn red-btn" href="https://h0lloway.github.io/couple_game/" target="_blank">Смотреть</a>
 						</div>
 					</div>
 				</li>
-
+		
 			</ul>
 			<div class="bottom-buttons">
 				<button class="btn-main" data-open-tab="skills">
@@ -1004,8 +985,6 @@
 				</button>
 			</div>
 		</section>
-
-
 		<!-- ====== Контакты ====== -->
 		<section id="contact">
 			<div class="left">
@@ -1019,15 +998,14 @@
 				</ul>
 				<button class="btn-main" data-open-tab="portfolio">Портфолио</button>
 			</div>
-
-
+		
+		
 			<div class="right">
 				<div class="dev-box">
 					<img src="/git_portfolio/assets/work-DxnpvNsx.png" alt="development image">
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 </body>
