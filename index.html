@@ -8,8 +8,8 @@
 	<title>Maksim Dubrovin | Frontend</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <script type="module" crossorigin src="/git_portfolio/assets/index-DeDbGepw.js"></script>
-  <link rel="stylesheet" crossorigin href="/git_portfolio/assets/index-BTdleqb0.css">
+  <script type="module" crossorigin src="/git_portfolio/assets/index-Dl5mFkwa.js"></script>
+  <link rel="stylesheet" crossorigin href="/git_portfolio/assets/index-BhNStEnE.css">
 </head>
 
 <body>
@@ -121,8 +121,10 @@
 		<section class="about" id="about">
 			<div class="left">
 				<h2 class="heading-2 fade-in">Обо мне</h2>
-				<p class="text text-xl fade-in">Я программист, занимаюсь фронтенд разработкой. Создаю проекты и воплощаю
-					в жизнь UI/UX идеи. Живу в Ростове-на-Дону</p>
+				<p class="text text-xl fade-in">Фронтенд-разработчик, создаю удобные и&nbsp;визуально аккуратные интерфейсы.
+					Пишу как на&nbsp;чистом HTML/CSS/JS, так и&nbsp;на&nbsp;Vue. Использую современные инструменты
+					сборки, препроцессоры и&nbsp;анимации. Люблю чистый код, внимание к&nbsp;деталям и&nbsp;плавные переходы,
+					улучшающие пользовательский опыт.</p>
 				<div class="about-features fade-in">
 					<div class="feature-item fade-in">
 						<i class="fas fa-code"></i>
@@ -150,17 +152,20 @@
 				<div class="right__content fade-in">
 					<img src="/git_portfolio/files/dubrovin_photo.png" alt="Моя фотография">
 					<div class="social-links fade-in">
-						<a class="social-links__item" href="https://t.me/makdu1" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-						<a class="social-links__item" href="https://instagram.com/mksm.17/" title="Instagram"><i class="fab fa-instagram"></i></a>
+						<a class="social-links__item" href="https://t.me/makdu1" title="Telegram"><i
+								class="fab fa-telegram-plane"></i></a>
+						<a class="social-links__item" href="https://instagram.com/mksm.17/" title="Instagram"><i
+								class="fab fa-instagram"></i></a>
 						<a class="social-links__item" href="https://vk.com/h0lloway" title="VK"><i class="fab fa-vk"></i></a>
-						<a class="social-links__item" href="mailto:gvozdb27@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+						<a class="social-links__item" href="mailto:gvozdb27@gmail.com" title="Email"><i
+								class="fas fa-envelope"></i></a>
 						<a class="social-links__item" href="#" title="HH"><b>HH</b></a>
 						<a class="social-links__item" href="files/Dubrovin_resume.pdf" download title="CV"><b>CV</b></a>
 					</div>
 				</div>
 				<div class="bottom-buttons fade-in navigation-btns">
 					<button class="btn-main" data-open-tab="home">
-						<i class="fa fa-arrow-left"></i> 
+						<i class="fa fa-arrow-left"></i>
 						<span>Главная</span>
 					</button>
 					<button class="btn-main" data-open-tab="skills">
@@ -386,15 +391,19 @@
 		<section class="portfolio" id="portfolio">
 			<div class="portfolio__wrap">
 				<h2 class="heading-2 fade-in">Портфолио</h2>
-				<ul class="protfolio__list-filter list-filter list-reset fade-in">
+				<ul class="protfolio__list-filter fade-in list-filter">
 					<li class="list-filter__item" data-id="all"><span>Все</span></li>
-					<li class="list-filter__item active" data-id="html"><span>Верстка</span></li>
+					<li class="list-filter__item" data-id="html"><span>Верстка</span></li>
 					<li class="list-filter__item" data-id="email"><span>Письма</span></li>
 					<li class="list-filter__item" data-id="vue"><span>Vue</span></li>
 					<li class="list-filter__item" data-id="js"><span>JavaScript</span></li>
+		
+					<!-- ИНДИКАТОР сразу в разметке -->
+					<div class="filter-indicator"></div>
 				</ul>
-				<ul class="portfolio__list list-reset ">
-						<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 0">
+		
+				<ul class="portfolio__list ">
+						<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 0">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -422,7 +431,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 1">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 1">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -450,7 +459,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 2">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 2">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -478,7 +487,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 3">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 3">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -506,7 +515,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 4">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 4">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -534,7 +543,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in vue element-show" style="display: none;--i: 5">
+						</li>				<li class="portfolio__list-item item-portf fade-in vue element-show" style="--i: 5">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -562,7 +571,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in vue element-show" style="display: none;--i: 6">
+						</li>				<li class="portfolio__list-item item-portf fade-in vue element-show" style="--i: 6">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -590,7 +599,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 7">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 7">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -618,7 +627,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 8">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 8">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -646,7 +655,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 9">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 9">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -674,7 +683,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 10">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 10">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -702,7 +711,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 11">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 11">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -730,7 +739,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 12">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 12">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -758,7 +767,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 13">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 13">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -786,7 +795,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 14">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 14">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -814,7 +823,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 15">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 15">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -842,7 +851,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 16">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 16">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -870,7 +879,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 17">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 17">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -898,7 +907,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="display: block;--i: 18">
+						</li>				<li class="portfolio__list-item item-portf fade-in html element-show" style="--i: 18">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -926,7 +935,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 19">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 19">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -954,7 +963,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 20">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 20">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -982,7 +991,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="display: none;--i: 21">
+						</li>				<li class="portfolio__list-item item-portf fade-in email element-show" style="--i: 21">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -1010,7 +1019,7 @@
 									</a>
 								</div>
 							</div>
-						</li>				<li class="portfolio__list-item item-portf fade-in js element-show" style="display: none;--i: 22">
+						</li>				<li class="portfolio__list-item item-portf fade-in js element-show" style="--i: 22">
 							<div class="item-portf__body">
 								<div class="item-portf__browser-bar">
 									<span></span>
@@ -1039,7 +1048,7 @@
 								</div>
 							</div>
 						</li>		</ul>
-				<div class="bottom-buttons fade-in">
+				<div class="bottom-buttons">
 					<button class="btn-main" data-open-tab="skills">
 						<i class="fa fa-arrow-left"></i> 
 						Навыки
