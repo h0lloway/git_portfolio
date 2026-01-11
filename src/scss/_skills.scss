@@ -1,4 +1,4 @@
-#skills.active {
+.skills {
 	display: flex;
 	gap: 15px;
 }
@@ -206,17 +206,19 @@
 		transform: rotate(90deg);
 	}
 
+	.skill-category {
+		transition: 0.3s ease;
+	}
+
 	.skill-items {
-		height: 0;
-		overflow: hidden;
-		transition: height 0.3s ease;
+		transition: 0.3s ease;
 	}
 
 	.skill-items__wrap {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 15px;
-		margin: 20px;
+		padding: 20px;
 	}
 
 	.skill-item {

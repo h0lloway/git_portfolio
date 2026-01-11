@@ -1,17 +1,15 @@
 .portfolio {
 	transition: .3s;
 
-	&.active {
-		display: block;
-	}
-
 	&__wrap {
 		padding: 60px 3% 40px;
 		display: flex;
 		flex-direction: column;
-		min-height: 100%;
+		min-height: 100vh;
 		border-radius: 15px;
 		background-color: #1a1a1a;
+		width: 100%;
+		max-width: 100%;
 
 		@media (max-width: 768px) {
 			padding-top: 40px;

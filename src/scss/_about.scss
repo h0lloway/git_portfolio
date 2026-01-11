@@ -1,11 +1,9 @@
 .about {
 	min-height: 100vh;
-	&.active {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 15px;
-		@media (max-width: 500px) { gap: 10px; }
-	}
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	@media (max-width: 500px) { gap: 10px; }
 	.fade-in {
 		opacity: 0;
 		transform: translateY(20px);
