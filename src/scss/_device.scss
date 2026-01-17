@@ -1,0 +1,61 @@
+/* ===== DEVICES ===== */
+.device {
+	position: relative;
+
+	&__frame {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	&__img {
+		position: absolute;
+		object-fit: cover;
+		object-position: top;
+		display: block;
+	}
+
+	/* ===== Browser ===== */
+	&--browser {
+		width: 65%;
+		overflow: hidden;
+		border-radius: 12px;
+
+		.device__img--desktop {
+			top: 40px;
+			left: 0;
+			width: 100%;
+			height: calc(100% - 40px);
+		}
+	}
+
+	/* ===== Phone ===== */
+	&--phone {
+		width: 220px;
+
+		.device__img--mobile {
+			top: 12%;
+			left: 6%;
+			width: 88%;
+			height: 76%;
+			border-radius: 20px;
+		}
+	}
+}
+
+/* ===== ADAPTIVE ===== */
+@media (max-width: 768px) {
+	.modal__content {
+		flex-direction: column;
+		gap: 28px;
+	}
+
+	.device--browser {
+		width: 100%;
+	}
+
+	.device--phone {
+		width: 190px;
+		margin: 0 auto;
+	}
+}

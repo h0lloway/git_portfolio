@@ -5,6 +5,8 @@ import { initPortfolioFilter } from './functions/portfolioFilter.js';
 import { initSkillsAccordion } from './functions/skillsAccordion.js';
 import { initGreetingByTime } from './functions/greetingByTime.js';
 import { initAlphaBanner } from './functions/alphaBanner.js';
+import { initPortfolioModal } from './functions/modal.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMobileNav();
@@ -14,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initSkillsAccordion();
 	initGreetingByTime('#hi');
 	initAlphaBanner('#alpha-banner');
+	initPortfolioModal();
 });
 
 document.addEventListener('click', e => {
@@ -26,3 +29,16 @@ document.addEventListener('click', e => {
 		})
 	);
 });
+
+
+const slides = document.querySelectorAll('#slider i');
+let current = 0;
+
+function showNext() {
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[current].classList.add('active');
+  current = (current + 1) % slides.length;
+}
+
+showNext();
+setInterval(showNext, 1500); // смена каждые 1 секунду
