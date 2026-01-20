@@ -1,17 +1,15 @@
 .portfolio {
 	transition: .3s;
 
-	&.active {
-		display: block;
-	}
-
 	&__wrap {
 		padding: 60px 3% 40px;
 		display: flex;
 		flex-direction: column;
-		min-height: 100%;
+		min-height: 100vh;
 		border-radius: 15px;
 		background-color: #1a1a1a;
+		width: 100%;
+		max-width: 100%;
 
 		@media (max-width: 768px) {
 			padding-top: 40px;
@@ -247,36 +245,4 @@
 			background-color: #e02a2a;
 		}
 	}
-}
-
-/* ===== Portfolio fade animation ===== */
-.portfolio .fade-in {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity .6s ease, transform .6s ease;
-}
-
-.portfolio .fade-in.active {
-	opacity: 1;
-	transform: translateY(0);
-}
-
-/* Заголовок */
-.portfolio h2.fade-in {
-	transition-delay: .05s;
-}
-
-/* Фильтр */
-.portfolio .list-filter.fade-in {
-	transition-delay: .15s;
-}
-
-/* Карточки портфолио */
-.portfolio .item-portf.fade-in {
-	transition-delay: calc(var(--i) * 0.08s);
-}
-
-/* Кнопки снизу */
-.portfolio .bottom-buttons.fade-in {
-	transition-delay: .3s;
 }
