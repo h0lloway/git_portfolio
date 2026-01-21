@@ -2,15 +2,29 @@ main {
 	display: flex;
 	flex-direction: column;
 	margin-left: 100px;
-	@media(max-width: 768px) {
-		padding-top: 60px;
+	@media (max-width: 768px) {
+		padding-top: 73px;
 		margin-left: 0;
 	}
 }
 section {
 	padding: 20px;
 	display: flex;
-	@media screen and (max-width:500px) {
+	flex-wrap: wrap;
+	gap: 15px;
+	min-height: 100vh;
+	.right {
+		position: relative;
+		footer {
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+	@media (max-width: 1199px) {
+		flex-direction: column;
+	}
+	@media screen and (max-width: 500px) {
 		padding: 10px;
+		gap: 10px;
 	}
 }

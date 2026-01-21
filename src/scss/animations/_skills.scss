@@ -1,0 +1,74 @@
+.skills {
+	.left {
+		.heading-2 {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInLeft 0.5s ease forwards;
+			animation-delay: 0.15s;
+		}
+		.text {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInLeft 0.5s ease forwards;
+			animation-delay: 0.35s;
+		}
+		.btn-details {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInLeft 0.5s ease forwards;
+			animation-delay: 1.45s;
+		}
+		.skills-features__item {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInLeft 0.5s ease forwards;
+			&:nth-child(1) {
+				animation-delay: 0.55s;
+			}
+			&:nth-child(2) {
+				animation-delay: 0.65s;
+			}
+			&:nth-child(3) {
+				animation-delay: 0.75s;
+			}
+			&:nth-child(4) {
+				animation-delay: 0.85s;
+			}
+			&:nth-child(5) {
+				animation-delay: 0.95s;
+			}
+			&:nth-child(6) {
+				animation-delay: 1.05s;
+			}
+			&:nth-child(7) {
+				animation-delay: 1.15s;
+			}
+			&:nth-child(8) {
+				animation-delay: 1.25s;
+			}
+			&:nth-child(9) {
+				animation-delay: 1.35s;
+			}
+		}
+	}
+	.right {
+		.skills-list {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInRight 0.6s ease forwards;
+			animation-delay: 0.3s;
+		}
+		.navigation-btns {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInRight 0.5s ease forwards;
+			animation-delay: 0.7s;
+		}
+		footer {
+			opacity: 0.001;
+			will-change: opacity, transform;
+			animation: fadeInRight 0.5s ease forwards;
+			animation-delay: 0.9s;
+		}
+	}
+}

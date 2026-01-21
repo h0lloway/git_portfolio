@@ -1,0 +1,26 @@
+#preloader {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--preloader-bg, #0a0a0a);
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
+#preloader svg {
+	width: 80px;
+	height: 80px;
+	transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+#preloader.hide svg {
+	transform: scale(3);
+	opacity: 0;
+}

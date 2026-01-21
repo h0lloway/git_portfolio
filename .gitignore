@@ -23,3 +23,12 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# personal notes
+IDEAS.md
+
+# CV (отдельный проект)
+cv/
+
+# Portfolio cover (сохраняется как картинка)
+cover/

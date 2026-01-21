@@ -1,89 +1,165 @@
 <template>
-  <li
-    class="portfolio__list-item item-portf"
-    :class="[data.type, { 'card-visible': visible }]"
-    :style="animationStyle"
-    @click="open"
-    ref="cardRef"
-  >
-    <div class="item-portf__body">
-      <div class="item-portf__browser-bar">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="item-portf__img">
-        <img
-          v-if="visible"
-          :src="data.img"
-          alt="Скриншот работы"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </li>
+	<li
+		ref="cardRef"
+		class="portfolio__list-item item-portf"
+		:class="[data.type, { 'is-visible': isVisible }]"
+		@click="open"
+		@mouseenter="onMouseEnter"
+		@mousemove="onMouseMove"
+		@mouseleave="onMouseLeave"
+	>
+		<div ref="bodyRef" class="item-portf__body">
+			<BrowserWindow>
+				<div class="item-portf__img">
+					<div v-if="!isLoaded" class="item-portf__skeleton"></div>
+					<img
+						v-if="shouldLoad"
+						:src="data.desktopImg"
+						:alt="`${data.subtitle} — ${data.title}`"
+						:class="{ loaded: isLoaded }"
+						@load="onImageLoad"
+					/>
+				</div>
+			</BrowserWindow>
+
+			<div class="item-portf__glass">
+				<span class="item-portf__subtitle">{{ data.subtitle }}</span>
+				<span class="item-portf__title">{{ data.title }}</span>
+				<Icon icon="mdi:arrow-right" class="item-portf__icon" />
+			</div>
+		</div>
+	</li>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue'
+import { Icon } from '@iconify/vue'
+import { useRouter } from 'vue-router'
+import BrowserWindow from './BrowserWindow.vue'
+
+const router = useRouter()
+const cardRef = ref(null)
+const bodyRef = ref(null)
+const isVisible = ref(false)
+const shouldLoad = ref(false)
+const isLoaded = ref(false)
+
+let observer = null
+let loadTimeout = null
 
 const props = defineProps({
-  data: Object,
-  index: Number,
-});
+	data: Object,
+	index: Number
+})
 
-const emit = defineEmits(["open"]);
-
-const cardRef = ref(null);
-const visible = ref(false);
-
-function open() {
-  emit("open", props.data);
+// === 3D Tilt ===
+function onMouseEnter() {
+	if (bodyRef.value) {
+		bodyRef.value.style.transition = 'transform 0.15s ease-out'
+	}
 }
 
-// IntersectionObserver
-let observer;
+function onMouseMove(e) {
+	if (!bodyRef.value || !cardRef.value) return
 
+	const rect = cardRef.value.getBoundingClientRect()
+	const x = e.clientX - rect.left
+	const y = e.clientY - rect.top
+	const centerX = rect.width / 2
+	const centerY = rect.height / 2
+
+	const rotateX = ((y - centerY) / centerY) * -8
+	const rotateY = ((x - centerX) / centerX) * 8
+
+	bodyRef.value.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+}
+
+function onMouseLeave() {
+	if (bodyRef.value) {
+		bodyRef.value.style.transition = 'transform 0.4s ease-out'
+		bodyRef.value.style.transform = 'rotateX(0) rotateY(0)'
+	}
+}
+
+// === Intersection Observer ===
 onMounted(() => {
-  observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        visible.value = true;
-        observer.disconnect();
-      }
-    },
-    { rootMargin: "0px 0px -50px 0px", threshold: 0 }
-  );
+	observer = new IntersectionObserver(
+		(entries) => {
+			if (entries[0].isIntersecting) {
+				const delay = props.index * 100
 
-  if (cardRef.value) observer.observe(cardRef.value);
-});
+				loadTimeout = setTimeout(() => {
+					shouldLoad.value = true
+					isVisible.value = true
+				}, delay)
+
+				observer.disconnect()
+			}
+		},
+		{ rootMargin: '50px' }
+	)
+
+	if (cardRef.value) {
+		observer.observe(cardRef.value)
+	}
+})
 
 onUnmounted(() => {
-  if (observer) observer.disconnect();
-});
+	if (observer) observer.disconnect()
+	if (loadTimeout) clearTimeout(loadTimeout)
+})
 
-// Стиль анимации: чередуем слева/справа по индексу
-const animationStyle = computed(() => {
-  const offsetX = props.index % 2 === 0 ? "-30px" : "30px";
-  const offsetY = "20px";
-  const delay = `${props.index * 100}ms`;
-  return {
-    "--offset-x": offsetX,
-    "--offset-y": offsetY,
-    "transition-delay": delay,
-  };
-});
-</script>
-
-<style scoped>
-.portfolio__list-item {
-  opacity: 0;
-  transform: translate(var(--offset-x, 0), var(--offset-y, 20px));
-  transition: opacity 0.6s ease, transform 0.6s ease;
+function onImageLoad() {
+	isLoaded.value = true
 }
 
-.portfolio__list-item.card-visible {
-  opacity: 1;
-  transform: translate(0, 0);
+function open() {
+	router.push({
+		name: 'PortfolioProject',
+		params: { id: props.data.id }
+	})
+}
+</script>
+
+<style lang="scss" scoped>
+.item-portf {
+	opacity: 0;
+	transform: translateY(20px);
+	transition:
+		opacity 0.4s ease,
+		transform 0.4s ease;
+	&.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	&__img {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		img {
+			opacity: 0;
+			transition:
+				opacity 0.3s ease,
+				transform 0.5s ease-out;
+			&.loaded {
+				opacity: 1;
+			}
+		}
+	}
+	&__skeleton {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(90deg, var(--skeleton-from) 25%, var(--skeleton-mid) 50%, var(--skeleton-from) 75%);
+		background-size: 200% 100%;
+		animation: skeleton-loading 1.5s infinite;
+	}
+}
+@keyframes skeleton-loading {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
 }
 </style>

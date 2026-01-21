@@ -1,3 +1,139 @@
+// Тёмная тема (по умолчанию)
+:root {
+	--bg-body: #121212;
+	--bg-section-left: #1a1a1a;
+	--bg-section-right: #242424;
+	--bg-card: #222;
+	--bg-card-hover: #2b2b2b;
+	--bg-nav: #1f1f1f;
+	--bg-btn: #333;
+	--bg-btn-hover: #555;
+	--bg-indicator: #606060;
+
+	--border-card: #2e2e2e;
+	--border-card-hover: #3c3c3c;
+
+	--text-primary: #e0e0e0;
+	--text-secondary: #cfcfcf;
+	--text-muted: #b5b5b5;
+	--text-white: #fff;
+
+	--accent-red: #ce4541;
+	--accent-red-light: #ff6464;
+	--accent-blue: #007aff;
+	--accent-blue-hover: #005fcc;
+
+	--overlay-dark: rgba(0, 0, 0, 0.5);
+	--shadow-color: rgba(0, 0, 0, 0.15);
+
+	--nav-hover: #33333348;
+	--nav-indicator: #333;
+
+	--filter-hover: #d2d2d233;
+
+	--slider-icon: #333;
+
+	--preloader-bg: #0a0a0a;
+
+	--browser-bar: #e3e3e3;
+	--browser-dots: #b0b0b0;
+	--browser-bg: #fff;
+
+	--photo-border: #585858;
+	--photo-bg: #7e7e7e;
+
+	--social-bg: #333;
+	--social-bg-hover: #555;
+
+	--tooltip-bg: #1a1a1a;
+	--tooltip-color: #fff;
+
+	--skeleton-from: #2a2a2a;
+	--skeleton-mid: #3a3a3a;
+
+	--form-placeholder: #666;
+	--form-overlay: rgba(26, 26, 26, 0.5);
+	--form-muted: #888;
+
+	--map-border: #3c3c3c;
+
+	--logo-fill: rgba(255, 255, 255, 0.15);
+	--logo-stroke: #fff;
+
+	--header-glass-bg: rgba(255, 255, 255, 0.08);
+	--header-glass-border: rgba(255, 255, 255, 0.2);
+	--header-glass-shadow-inset: rgba(255, 255, 255, 0.3);
+	--header-glass-shadow: rgba(0, 0, 0, 0.15);
+}
+
+// Светлая тема
+[data-theme='light'] {
+	--bg-body: #f5f5f5;
+	--bg-section-left: #ffffff;
+	--bg-section-right: #eaeaea;
+	--bg-card: #ffffff;
+	--bg-card-hover: #f0f0f0;
+	--bg-nav: #ffffff;
+	--bg-btn: #e0e0e0;
+	--bg-btn-hover: #d0d0d0;
+	--bg-indicator: #c0c0c0;
+
+	--border-card: #ddd;
+	--border-card-hover: #ccc;
+
+	--text-primary: #1a1a1a;
+	--text-secondary: #333;
+	--text-muted: #666;
+	--text-white: #1a1a1a;
+
+	--accent-red: #ce4541;
+	--accent-red-light: #e04040;
+	--accent-blue: #007aff;
+	--accent-blue-hover: #005fcc;
+
+	--overlay-dark: rgba(0, 0, 0, 0.3);
+	--shadow-color: rgba(0, 0, 0, 0.08);
+
+	--nav-hover: rgba(0, 0, 0, 0.06);
+	--nav-indicator: #ddd;
+
+	--filter-hover: rgba(0, 0, 0, 0.06);
+
+	--slider-icon: #bbb;
+
+	--preloader-bg: #f5f5f5;
+
+	--browser-bar: #d0d0d0;
+	--browser-dots: #aaa;
+	--browser-bg: #fff;
+
+	--photo-border: #ccc;
+	--photo-bg: #ddd;
+
+	--social-bg: #e0e0e0;
+	--social-bg-hover: #d0d0d0;
+
+	--tooltip-bg: #333;
+	--tooltip-color: #fff;
+
+	--skeleton-from: #e0e0e0;
+	--skeleton-mid: #f0f0f0;
+
+	--form-placeholder: #999;
+	--form-overlay: rgba(255, 255, 255, 0.5);
+	--form-muted: #999;
+
+	--map-border: #ccc;
+
+	--logo-fill: rgba(0, 0, 0, 0.08);
+	--logo-stroke: #1a1a1a;
+
+	--header-glass-bg: rgba(255, 255, 255, 0.7);
+	--header-glass-border: rgba(0, 0, 0, 0.1);
+	--header-glass-shadow-inset: rgba(255, 255, 255, 0.5);
+	--header-glass-shadow: rgba(0, 0, 0, 0.08);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,24 +144,18 @@
 html {
 	scrollbar-gutter: stable;
 }
-html, body {
+html,
+body {
 	height: 100%;
 	margin: 0;
 }
 body {
-	background-color: #121212;
-	color: #e0e0e0;
+	background-color: var(--bg-body);
+	color: var(--text-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
 	&.open {
 		overflow: hidden;
 	}
-	--white-color: #333333;
-	--carbonic: #f4f4f4;
-	--almost-white: #373737;
-	--e0e0e0: #333333;
-	--transparent: #000000cc;
-	--socials: rgb(192, 192, 192);
-	--box-shadow-light: #717779;
-	--red-main: #ce4541;
 }
 h2 {
 	margin-bottom: 15px;
@@ -46,6 +176,7 @@ li {
 }
 a {
 	text-decoration: none;
+	color: inherit;
 }
 a,
 button {
@@ -60,30 +191,35 @@ button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap:5px;
+	gap: 5px;
 	line-height: 100%;
-	padding: 10px 20px;
-	background-color: #333;
-	color: #e0e0e0;
+	padding: 14px 28px;
+	background-color: var(--bg-btn);
+	color: var(--text-primary);
 	border-radius: 5px;
 	transition: 0.3s;
 	font-size: 1rem;
 	letter-spacing: 1.2px;
-	transition: .3s ease !important;
-	@media screen and (max-width:768px) {
+	transition: 0.3s ease !important;
+	@media screen and (max-width: 768px) {
 		width: 100%;
+		padding: 10px 20px;
 	}
 	&:hover {
-		background-color: #555;
+		background-color: var(--bg-btn-hover);
+	}
+	&--disabled {
+		opacity: 0.4;
+		pointer-events: none;
+		cursor: default;
 	}
 }
-
 .heading {
 	&-2 {
 		font-size: 72px;
 		font-weight: 700;
 		line-height: 1.2;
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
 		@media screen and (max-width: 767px) {
 			font-size: 40px;
 		}

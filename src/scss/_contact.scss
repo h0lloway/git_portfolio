@@ -1,20 +1,15 @@
-
-#contact {
-	min-height: 100vh;
-	gap:15px;
+.contact {
 	.left,
 	.right {
 		flex: 1;
 		padding: 60px 3% 40px;
 		border-radius: 15px;
 	}
-
 	.left {
-		background-color: #1a1a1a;
+		background-color: var(--bg-section-left);
 	}
-
 	.right {
-		background-color: #242424;
+		background-color: var(--bg-section-right);
 		gap: 10px;
 		display: flex;
 		flex-direction: column;
@@ -23,89 +18,68 @@
 	}
 }
 .social-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px;
-
-  li {
-    margin-bottom: 14px;
-
-    a {
-      font-size: 20px;
-      font-weight: 500;
-      color: #fff;
-      text-decoration: none;
-      transition: 0.2s;
-
-      &:hover {
-        color: #007aff;
-        transform: translateX(4px);
-      }
-    }
-  }
-}
-
-.back-btn {
-  display: inline-block;
-  margin-top: 30px;
-  font-size: 18px;
-  text-decoration: none;
-  color: #fff;
-  background: #007aff;
-  padding: 10px 18px;
-  border-radius: 8px;
-  transition: 0.25s;
-
-  &:hover {
-    background: #005fcc;
-  }
-}
-
-.dev-box {
-  text-align: center;
-
-  img {
-    width: 200px;
-    opacity: 0.8;
-  }
-}
-
-/* Адаптив */
-@media (max-width: 1199px) {
-	#contact {
-		flex-direction: column;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px;
+	li {
+		margin-bottom: 14px;
+		a {
+			font-size: 20px;
+			font-weight: 500;
+			color: var(--text-white);
+			text-decoration: none;
+			transition: 0.2s;
+			&:hover {
+				color: var(--accent-blue);
+				transform: translateX(4px);
+			}
+		}
 	}
 }
-
-
-/* ==== Mobile Adaptation ==== */
+.back-btn {
+	display: inline-block;
+	margin-top: 30px;
+	font-size: 18px;
+	text-decoration: none;
+	color: #fff;
+	background: var(--accent-blue);
+	padding: 10px 18px;
+	border-radius: 8px;
+	transition: 0.25s;
+	&:hover {
+		background: var(--accent-blue-hover);
+	}
+}
+.dev-box {
+	text-align: center;
+	img {
+		width: 200px;
+		opacity: 0.8;
+	}
+}
 @media (max-width: 768px) {
-  .page-container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .left,
-  .right {
-    width: 100%;
-    padding: 40px 25px;
-    height: auto;
-  }
-
-  .right {
-    padding: 60px 25px;
-  }
-
-  .social-list li a {
-    font-size: 18px;
-  }
-
-  .dev-box img {
-    width: 160px;
-  }
-
-  .back-btn {
-    font-size: 16px;
-    padding: 8px 14px;
-  }
+	.page-container {
+		flex-direction: column;
+		height: auto;
+	}
+	.left,
+	.right {
+		width: 100%;
+		padding: 40px 25px;
+		height: auto;
+	}
+	.right {
+		padding: 0;
+		min-height: 600px;
+	}
+	.social-list li a {
+		font-size: 18px;
+	}
+	.dev-box img {
+		width: 160px;
+	}
+	.back-btn {
+		font-size: 16px;
+		padding: 8px 14px;
+	}
 }
