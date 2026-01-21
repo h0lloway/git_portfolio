@@ -1,0 +1,34 @@
+{
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://makdu.site/#website",
+			"url": "https://makdu.site/",
+			"name": "Максим Дубровин | Веб-разработчик",
+			"description": "Портфолио веб-разработчика Максима Дубровина — проекты, навыки, контакты.",
+			"inLanguage": "ru-RU"
+		},
+		{
+			"@type": "Person",
+			"@id": "https://makdu.site/#person",
+			"name": "Максим Дубровин",
+			"jobTitle": "Веб-разработчик",
+			"url": "https://makdu.site/",
+			"email": "gvozdb27@gmail.com",
+			"image": "https://makdu.site/icon-512.png",
+			"sameAs": [
+				"https://t.me/makdu1",
+				"https://vk.com/h0lloway",
+				"https://instagram.com/mksm.17/",
+				"https://hh.ru/resume/d0e43871ff098babda0039ed1f616d666f7147"
+			],
+			"knowsAbout": ["HTML", "CSS", "JavaScript", "Vue.js", "SCSS", "Vite", "Email-разработка"],
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Ростов-на-Дону",
+				"addressCountry": "RU"
+			}
+		}
+	]
+}

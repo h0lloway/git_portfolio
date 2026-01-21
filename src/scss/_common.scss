@@ -3,14 +3,15 @@
 	flex: 1;
 	padding: 60px 3% 40px;
 	border-radius: 15px;
-	@media screen and (max-width:768px) {
+	transition: background-color 0.3s ease;
+	@media screen and (max-width: 768px) {
 		padding-top: 40px;
 	}
 }
 .text {
 	&-xl {
 		font-size: 26px;
-		@media screen and (max-width:1023px) {
+		@media screen and (max-width: 1023px) {
 			font-size: 22px;
 		}
 	}
@@ -18,7 +19,8 @@
 .navigation-btns {
 	display: flex;
 	gap: 10px;
-	@media screen and (max-width:768px) {
+	margin-bottom: 80px;
+	@media screen and (max-width: 768px) {
 		width: 100% !important;
 		display: flex;
 		flex-direction: column;
@@ -27,5 +29,79 @@
 				order: 2 !important;
 			}
 		}
+	}
+}
+
+// === Универсальные тултипы ===
+[data-tooltip] {
+	position: relative;
+
+	&::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition:
+			opacity 0.2s ease,
+			visibility 0.2s ease;
+		z-index: 1000;
+		background: var(--tooltip-bg);
+		color: var(--tooltip-color);
+		font-size: 14px;
+		font-weight: 500;
+		white-space: nowrap;
+		padding: 8px 12px;
+		border-radius: 6px;
+		box-shadow: 0 4px 12px var(--shadow-color);
+	}
+
+	@media (hover: hover) {
+		&:hover::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.tooltip-active::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+// Тултип справа (по умолчанию)
+[data-tooltip-position='right'],
+[data-tooltip]:not([data-tooltip-position]) {
+	&::after {
+		left: calc(100% + 8px);
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+// Тултип сверху
+[data-tooltip-position='top'] {
+	&::after {
+		bottom: calc(100% + 8px);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+// Тултип снизу
+[data-tooltip-position='bottom'] {
+	&::after {
+		top: calc(100% + 8px);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+// Тултип слева
+[data-tooltip-position='left'] {
+	&::after {
+		right: calc(100% + 8px);
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }

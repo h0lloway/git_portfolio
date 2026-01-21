@@ -4,43 +4,68 @@
 	left: 0;
 	z-index: 50;
 	width: 100%;
-	background: linear-gradient(
-		135deg,
-		rgba(255, 255, 255, 0.12),
-		rgba(255, 255, 255, 0.04)
-	);
-	backdrop-filter: blur(14px) saturate(160%);
-	-webkit-backdrop-filter: blur(14px) saturate(160%);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	background: var(--header-glass-bg);
+	backdrop-filter: blur(20px) saturate(180%);
+	-webkit-backdrop-filter: blur(20px) saturate(180%);
+	border-bottom: 1px solid var(--header-glass-border);
 	box-shadow:
-		inset 0 1px 0 rgba(255, 255, 255, 0.25),
-		0 8px 32px rgba(0, 0, 0, 0.25);
-	transition: transform 0.3s ease;
+		inset 0 1px 1px var(--header-glass-shadow-inset),
+		0 4px 20px var(--header-glass-shadow);
+	transition: transform 0.3s ease, background-color 0.3s ease;
 	display: none;
 	align-items: center;
 	justify-content: space-between;
-	padding: 5px 10px;
+	padding: 10px;
 	.logo {
+		line-height: 0;
+		height: 100%;
 		svg {
-			width: 40px;
-			height: 40px;
+			width: 52px;
+			height: 52px;
+		}
+	}
+	.header-right {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.theme-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 10px;
+		color: var(--text-white);
+		background: var(--header-glass-bg);
+		backdrop-filter: blur(6px);
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background: var(--bg-btn-hover);
 		}
 	}
 	.burger {
 		display: none;
 		z-index: 100;
-		color: #fff;
-		font-size: 22px;
-		padding: 10px 12px;
+		color: var(--text-white);
+		width: 44px;
+		height: 44px;
+		align-items: center;
+		justify-content: center;
 		border-radius: 10px;
-		background: rgba(255, 255, 255, 0.08);
+		background: var(--header-glass-bg);
 		backdrop-filter: blur(6px);
 		cursor: pointer;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background: var(--bg-btn-hover);
+		}
 	}
-	@media screen and (max-width:768px) {
+	@media screen and (max-width: 768px) {
 		display: flex;
 		.burger {
-			display: block;
+			display: flex;
 		}
 	}
 }

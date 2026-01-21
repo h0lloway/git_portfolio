@@ -14,12 +14,12 @@ $keyboard-clr: #585858;
 
 // measurements (x1.5)
 $terminal-height: 170px; // 85 * 2
-$terminal-width: 250px;  // 125 * 2
-$laptop-height: 250px;   // 125 * 2
-$laptop-width: 350px;    // 175 * 2
-$keyboard-height: 28px;  // 14 * 2
-$keyboard-width: 460px;  // 230 * 2
-$camera-size: 14px;      // 7 * 2
+$terminal-width: 250px; // 125 * 2
+$laptop-height: 250px; // 125 * 2
+$laptop-width: 350px; // 175 * 2
+$keyboard-height: 28px; // 14 * 2
+$keyboard-width: 460px; // 230 * 2
+$camera-size: 14px; // 7 * 2
 @mixin center-flex {
 	display: flex;
 	align-items: center;
@@ -33,12 +33,12 @@ $camera-size: 14px;      // 7 * 2
 		@include center-flex;
 		border-radius: 11px 11px 0 0;
 		background-color: $laptop-clr;
-		box-shadow: 
+		box-shadow:
 			0 0 0 2px black,
 			0 0 0 4.5px $laptop-clr2,
 			0 0 14px black;
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
 			height: $keyboard-height;
 			width: $keyboard-width;
@@ -49,7 +49,7 @@ $camera-size: 14px;      // 7 * 2
 			box-shadow: 0px 3px 5px rgb(178, 193, 212);
 		}
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			height: 6px;
 			width: 90px; // 45 * 2
@@ -58,30 +58,23 @@ $camera-size: 14px;      // 7 * 2
 			transform: translateY(131px); // 65.5 * 2
 		}
 		.laptop-screen {
+			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			height: $laptop-height * 0.86;
 			width: $laptop-width * 0.94;
-			background-image: linear-gradient(
-				45deg,
-				$screen-clr 65%,
-				$screen-clr2 65%
-			);
+			background-image: linear-gradient(45deg, $screen-clr 65%, $screen-clr2 65%);
 			&::before {
-				content: "";
+				content: '';
 				position: absolute;
 				height: $camera-size;
 				width: $camera-size;
 				border-radius: 50%;
-				background-image: radial-gradient(
-					#abebff 0 20%,
-					black 20% 50%,
-					#808080 50% 90%
-				);
+				background-image: radial-gradient(#abebff 0 20%, black 20% 50%, #808080 50% 90%);
 				left: 50%;
 				transform: translateX(-50%);
-				top: 2px;
+				top: -17px;
 			}
 		}
 		.laptop-terminal {
@@ -92,7 +85,7 @@ $camera-size: 14px;      // 7 * 2
 			background-color: $terminal-clr;
 			border-top: 11px solid #545454;
 			&::before {
-				content: "🔴   🟡   🟢 ~/ code / css-stuff";
+				content: '🔴   🟡   🟢 ~/ code / css-stuff';
 				position: absolute;
 				color: white;
 				font-size: 5px;
@@ -125,7 +118,9 @@ $camera-size: 14px;      // 7 * 2
 	}
 
 	.laptop > .laptop-terminal > p {
-		animation: typing-animation 4s steps(15) infinite, blink 1s infinite;
+		animation:
+			typing-animation 4s steps(15) infinite,
+			blink 1s infinite;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -153,7 +148,7 @@ $camera-size: 14px;      // 7 * 2
 				&::before {
 					height: 11px;
 					width: 11px;
-					top: 2px;
+					top: -13px;
 				}
 				&::after {
 					top: 30%;
@@ -203,7 +198,7 @@ $camera-size: 14px;      // 7 * 2
 				&::before {
 					height: 10px;
 					width: 10px;
-					top: 2px;
+					top: -12px;
 				}
 			}
 			.laptop-terminal {

@@ -1,59 +1,121 @@
 <template>
-	<section class="about" id="about">
+	<section id="about" class="about">
 		<div class="left">
 			<h2 class="heading-2">Обо мне</h2>
-			<p class="text text-xl">Фронтенд-разработчик, создаю удобные и&nbsp;визуально аккуратные интерфейсы.
-				Пишу как на&nbsp;чистом HTML/CSS/JS, так и&nbsp;на&nbsp;Vue. Использую современные инструменты
-				сборки, препроцессоры и&nbsp;анимации. Люблю чистый код, внимание к&nbsp;деталям и&nbsp;плавные переходы,
-				улучшающие пользовательский опыт.</p>
+			<p class="text text-xl">
+				Веб-разработчик, специализируюсь на&nbsp;вёрстке и&nbsp;разработке интерфейсов.
+				Пишу семантичный адаптивный HTML/CSS/JS, работаю с&nbsp;Vue, интегрирую в&nbsp;различные платформы.
+				Делаю интерфейсы понятными, аккуратными и&nbsp;готовыми к&nbsp;масштабированию.
+			</p>
 			<div class="about-features">
-				<div class="feature-item">
-					<i class="fas fa-code"></i>
-					<p>Опыт разработки 3 года</p>
-				</div>
-				<div class="feature-item">
-					<i class="fas fa-user-check"></i>
-					<p>Организованный и автономный</p>
-				</div>
-				<div class="feature-item">
-					<i class="fas fa-heart"></i>
-					<p>Люблю программировать</p>
-				</div>
-				<div class="feature-item">
-					<i class="fas fa-graduation-cap"></i>
-					<p>Постоянно учусь</p>
-				</div>
-				<div class="feature-item">
-					<i class="fas fa-star"></i>
-					<p>Склонный к перфекционизму</p>
+				<div v-for="(item, i) in aboutFeatures" :key="i" class="feature-item">
+					<Icon :icon="item.icon" width="30" height="30" />
+					<p>{{ item.text }}</p>
 				</div>
 			</div>
 		</div>
 		<div class="right">
 			<div class="right__content">
-				<img src="/files/dubrovin_photo.png" alt="Dubrovin photo">
+				<div
+					ref="photoWrapRef"
+					class="photo-wrap"
+					@mouseenter="onMouseEnter"
+					@mousemove="onMouseMove"
+					@mouseleave="onMouseLeave"
+				>
+					<img src="/assets/img/dubrovin_photo.png" alt="Фото Максима Дубровина" draggable="false" />
+				</div>
 				<div class="social-links">
-					<a class="social-links__item" href="https://t.me/makdu1" title="Telegram"><i
-							class="fab fa-telegram-plane"></i></a>
-					<a class="social-links__item" href="https://instagram.com/mksm.17/" title="Instagram"><i
-							class="fab fa-instagram"></i></a>
-					<a class="social-links__item" href="https://vk.com/h0lloway" title="VK"><i class="fab fa-vk"></i></a>
-					<a class="social-links__item" href="mailto:gvozdb27@gmail.com" title="Email"><i
-							class="fas fa-envelope"></i></a>
-					<a class="social-links__item" href="https://hh.ru/resume/d0e43871ff098babda0039ed1f616d666f7147" title="hh"><b>hh</b></a>
-					<a class="social-links__item" href="files/Dubrovin_resume.pdf" download title="CV"><b>CV</b></a>
+					<a
+						v-for="link in socialLinks"
+						:key="link.title"
+						class="social-links__item"
+						:href="link.email ? undefined : link.href"
+						:title="link.title"
+						:download="link.download || null"
+						@click="handleLinkClick($event, link)"
+					>
+						<Icon v-if="link.icon" :icon="link.email && emailCopied ? 'mdi:content-copy' : link.icon" />
+						<b v-else>{{ link.text }}</b>
+					</a>
 				</div>
 			</div>
-			<div class="bottom-buttons navigation-btns">
+			<div class="navigation-btns">
 				<router-link to="/" class="btn-main">
-					<i class="fa fa-arrow-left"></i>
+					<Icon icon="mdi:arrow-left" />
 					<span>Главная</span>
 				</router-link>
 				<router-link to="/skills" class="btn-main">
 					<span>Навыки</span>
-					<i class="fa fa-arrow-right"></i>
+					<Icon icon="mdi:arrow-right" />
 				</router-link>
 			</div>
+			<Footer />
 		</div>
 	</section>
 </template>
+
+<script setup>
+import { ref, onBeforeUnmount } from 'vue'
+import Footer from '../components/Footer.vue'
+import { Icon } from '@iconify/vue'
+import { aboutFeatures, socialLinks } from '../data/about'
+
+const photoWrapRef = ref(null)
+const emailCopied = ref(false)
+let emailTimer = null
+let ticking = false
+
+function handleLinkClick(event, link) {
+	if (!link.email) return
+	event.preventDefault()
+	navigator.clipboard.writeText(link.email)
+	emailCopied.value = true
+	clearTimeout(emailTimer)
+	emailTimer = setTimeout(() => { emailCopied.value = false }, 2000)
+}
+
+onBeforeUnmount(() => clearTimeout(emailTimer))
+
+function onMouseEnter() {
+	if (photoWrapRef.value) {
+		photoWrapRef.value.style.transition = 'transform 0.15s ease-out'
+	}
+}
+
+function onMouseMove(e) {
+	if (!photoWrapRef.value || ticking) return
+
+	ticking = true
+	requestAnimationFrame(() => {
+		if (!photoWrapRef.value) {
+			ticking = false
+			return
+		}
+
+		const rect = photoWrapRef.value.getBoundingClientRect()
+		const x = e.clientX - rect.left
+		const y = e.clientY - rect.top
+		const centerX = rect.width / 2
+		const centerY = rect.height / 2
+
+		const rotateX = ((y - centerY) / centerY) * -10
+		const rotateY = ((x - centerX) / centerX) * 10
+
+		photoWrapRef.value.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+		ticking = false
+	})
+}
+
+function onMouseLeave() {
+	if (photoWrapRef.value) {
+		photoWrapRef.value.style.transition = 'transform 0.4s ease-out'
+		photoWrapRef.value.style.transform = 'rotateX(0) rotateY(0)'
+	}
+}
+</script>
+
+<style lang="scss">
+@use '../scss/about';
+@use '../scss/animations/about' as aboutAnimations;
+</style>
