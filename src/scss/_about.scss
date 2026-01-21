@@ -1,9 +1,4 @@
 .about {
-	min-height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 15px;
-	@media (max-width: 500px) { gap: 10px; }
 	.left {
 		min-width: 250px;
 		background-color: #1a1a1a;
@@ -111,16 +106,7 @@
 			margin-right: 8px;
 		}
 	}
-	.bottom-buttons {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-	}
-	@media (max-width: 1199px) {
-		flex-direction: column;
-	}
 	@media (max-width: 768px) {
-		.bottom-buttons button,
 		.social-links__item { margin: 0 5px; }
 		.about-features { gap: 15px; }
 		.feature-item { flex: 1 1 100%; }

@@ -33,18 +33,15 @@
 			<div class="right__content">
 				<img src="/files/dubrovin_photo.png" alt="Dubrovin photo">
 				<div class="social-links">
-					<a class="social-links__item" href="https://t.me/makdu1" title="Telegram"><i
-							class="fab fa-telegram-plane"></i></a>
-					<a class="social-links__item" href="https://instagram.com/mksm.17/" title="Instagram"><i
-							class="fab fa-instagram"></i></a>
+					<a class="social-links__item" href="https://t.me/makdu1" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+					<a class="social-links__item" href="https://instagram.com/mksm.17/" title="Instagram"><i class="fab fa-instagram"></i></a>
 					<a class="social-links__item" href="https://vk.com/h0lloway" title="VK"><i class="fab fa-vk"></i></a>
-					<a class="social-links__item" href="mailto:gvozdb27@gmail.com" title="Email"><i
-							class="fas fa-envelope"></i></a>
+					<a class="social-links__item" href="mailto:gvozdb27@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
 					<a class="social-links__item" href="https://hh.ru/resume/d0e43871ff098babda0039ed1f616d666f7147" title="hh"><b>hh</b></a>
 					<a class="social-links__item" href="files/Dubrovin_resume.pdf" download title="CV"><b>CV</b></a>
 				</div>
 			</div>
-			<div class="bottom-buttons navigation-btns">
+			<div class="navigation-btns">
 				<router-link to="/" class="btn-main">
 					<i class="fa fa-arrow-left"></i>
 					<span>Главная</span>
@@ -54,6 +51,20 @@
 					<i class="fa fa-arrow-right"></i>
 				</router-link>
 			</div>
+			<Footer />
 		</div>
 	</section>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import Footer from '../components/Footer.vue'
+
+const show = ref(false)
+
+onMounted(() => {
+	requestAnimationFrame(() => {
+		show.value = true
+	})
+})
+</script>

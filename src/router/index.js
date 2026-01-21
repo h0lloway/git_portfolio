@@ -5,6 +5,7 @@ import About from '../views/About.vue'
 import Skills from '../views/Skills.vue'
 import Portfolio from '../views/Portfolio.vue'
 import Contacts from '../views/Contacts.vue'
+import PortfolioProject from '../views/PortfolioProject.vue'
 
 export default createRouter({
 	history: createWebHashHistory(), // 🔥 GH Pages
@@ -13,7 +14,12 @@ export default createRouter({
 		{ path: '/about', component: About },
 		{ path: '/skills', component: Skills },
 		{ path: '/portfolio', component: Portfolio },
-		{ path: '/contacts', component: Contacts }
+		{ path: '/contacts', component: Contacts },
+		{
+			path: '/portfolio/:id',
+			name: 'PortfolioProject',
+			component: PortfolioProject
+		},
 	],
 	scrollBehavior(to, from, savedPosition) {
 		// Если есть сохранённая позиция (например, кнопка "назад")

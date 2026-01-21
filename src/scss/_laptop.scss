@@ -58,6 +58,7 @@ $camera-size: 14px;      // 7 * 2
 			transform: translateY(131px); // 65.5 * 2
 		}
 		.laptop-screen {
+			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -81,7 +82,7 @@ $camera-size: 14px;      // 7 * 2
 				);
 				left: 50%;
 				transform: translateX(-50%);
-				top: 2px;
+				top: -17px;
 			}
 		}
 		.laptop-terminal {
@@ -153,7 +154,7 @@ $camera-size: 14px;      // 7 * 2
 				&::before {
 					height: 11px;
 					width: 11px;
-					top: 2px;
+					top: -13px;
 				}
 				&::after {
 					top: 30%;

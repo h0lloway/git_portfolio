@@ -7,9 +7,7 @@
 			<i class="fas fa-bars"></i>
 		</button>
 
-		
-
-		<div class="logo">
+		<router-link to="/" class="logo">
 			<svg width="60" height="60" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
 				<!-- Квадрат с темным фоном -->
 				<rect x="1" y="1" width="28" height="28" rx="4" ry="4" fill="#222" stroke="#fff"
@@ -28,7 +26,7 @@
 								C23,8 15,8 15,8 Z" stroke="#fff" fill="none"/>
 				</g>
 			</svg>
-		</div>
+		</router-link>
 	</header>
 </template>
 

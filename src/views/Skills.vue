@@ -7,39 +7,39 @@
 				<p>Любимый стек&nbsp;&mdash; Vue + Vite + Blade: позволяет создавать динамичные интерфейсы и&nbsp;выстраивать удобную структуру проекта.</p>
 			</div>
 			<div class="skills-features">
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-check-circle"></i>
 					<p>Создаю надежные и&nbsp;правильно работающие интерфейсы</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-bolt"></i>
 					<p>Пишу современный и&nbsp;производительный код</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-lightbulb"></i>
 					<p>Выбираю простой способ решения задачи</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-code"></i>
 					<p>Верстаю семантично, кроссбраузерно и&nbsp;pixel-perfect</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-layer-group"></i>
 					<p>Использую актуальные фреймворки, библиотеки и&nbsp;инструменты</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-magic"></i>
 					<p>Реализую адаптивный интерфейс и&nbsp;анимации</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-align-left"></i>
 					<p>Соблюдаю единый стиль кода</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-sync-alt"></i>
 					<p>Оптимизирую, тестирую и&nbsp;рефакторю</p>
 				</div>
-				<div class="skills-feature-item">
+				<div class="skills-features__item">
 					<i class="fas fa-tasks"></i>
 					<p>Планирую и&nbsp;декомпозирую задачи</p>
 				</div>
@@ -100,6 +100,7 @@
 					<i class="fa fa-arrow-right"></i>
 				</router-link>
 			</div>
+			<Footer /> 
 		</div>
 	</section>
 </template>
@@ -107,6 +108,7 @@
 
 <script setup>
 import { reactive } from 'vue';
+import Footer from '../components/Footer.vue';
 import { categories as initialCategories } from '../data/skills';
 
 const categories = reactive(initialCategories);
