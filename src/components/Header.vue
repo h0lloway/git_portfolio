@@ -35,7 +35,10 @@
 		</router-link>
 
 		<div class="header-right">
-			<button class="theme-toggle" aria-label="Сменить тему" @click="toggleTheme">
+			<button class="lang-toggle" :aria-label="locale === 'ru' ? 'Switch to English' : 'Переключить на русский'" @click="toggleLocale">
+				{{ locale === 'ru' ? 'EN' : 'RU' }}
+			</button>
+			<button class="theme-toggle" :aria-label="$t('theme.toggle')" @click="toggleTheme">
 				<Icon :icon="isDark ? 'mdi:weather-sunny' : 'mdi:weather-night'" width="24" height="24" />
 			</button>
 			<button class="burger" @click="$emit('toggle-menu')">
@@ -47,8 +50,17 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
 import { initHeaderScroll } from '../js/functions/headerScroll.js'
+
+const { locale } = useI18n()
+
+function toggleLocale() {
+	const next = locale.value === 'ru' ? 'en' : 'ru'
+	locale.value = next
+	localStorage.setItem('locale', next)
+}
 
 defineEmits(['toggle-menu'])
 

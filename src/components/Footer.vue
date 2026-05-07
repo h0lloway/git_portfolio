@@ -1,7 +1,7 @@
 <template>
 	<footer class="footer">
 		<p class="copyright">
-			© 2026, разработано <a href="https://github.com/h0lloway" target="_blank">мной</a> с
+			© 2026, {{ $t('footer.copyright') }} <a href="https://github.com/h0lloway" target="_blank">{{ $t('footer.by') }}</a> {{ $t('footer.with') }}
 			<Icon icon="mdi:heart" />
 		</p>
 		<div class="tech-icons">
