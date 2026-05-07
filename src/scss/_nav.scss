@@ -66,8 +66,28 @@ nav {
 			}
 		}
 	}
-	.theme-toggle {
+	.lang-toggle {
 		margin-top: auto;
+		margin-bottom: 8px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-primary);
+		background: var(--bg-btn);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background: var(--bg-btn-hover);
+		}
+	}
+	.theme-toggle {
+		margin-top: 0;
 		margin-bottom: 20px;
 		width: 50px;
 		height: 50px;
@@ -106,6 +126,9 @@ nav {
 		}
 		.nav-buttons {
 			flex: none;
+		}
+		.lang-toggle {
+			display: none;
 		}
 		.theme-toggle {
 			display: none;

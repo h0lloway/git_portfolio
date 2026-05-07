@@ -45,24 +45,28 @@
 			<div ref="navButtons" class="nav-buttons">
 				<div ref="indicatorEl" class="nav-indicator no-transition"></div>
 
-				<router-link to="/" class="nav-button" data-tooltip="Главная">
+				<router-link to="/" class="nav-button" :data-tooltip="$t('nav.home')">
 					<Icon icon="ph:house-bold" width="36" height="36" />
 				</router-link>
-				<router-link to="/about" class="nav-button" data-tooltip="Обо мне">
+				<router-link to="/about" class="nav-button" :data-tooltip="$t('nav.about')">
 					<Icon icon="ph:user-bold" width="36" height="36" />
 				</router-link>
-				<router-link to="/skills" class="nav-button" data-tooltip="Навыки">
+				<router-link to="/skills" class="nav-button" :data-tooltip="$t('nav.skills')">
 					<Icon icon="ph:wrench-bold" width="36" height="36" />
 				</router-link>
-				<router-link to="/portfolio" class="nav-button" data-tooltip="Портфолио">
+				<router-link to="/portfolio" class="nav-button" :data-tooltip="$t('nav.portfolio')">
 					<Icon icon="ph:squares-four-bold" width="36" height="36" />
 				</router-link>
-				<router-link to="/contacts" class="nav-button" data-tooltip="Контакты">
+				<router-link to="/contacts" class="nav-button" :data-tooltip="$t('nav.contacts')">
 					<Icon icon="ph:envelope-bold" width="36" height="36" />
 				</router-link>
 			</div>
 
-			<button class="theme-toggle" aria-label="Сменить тему" @click="toggleTheme">
+			<button class="lang-toggle" :aria-label="locale === 'ru' ? 'Switch to English' : 'Переключить на русский'" @click="toggleLocale">
+				{{ locale === 'ru' ? 'EN' : 'RU' }}
+			</button>
+
+			<button class="theme-toggle" :aria-label="$t('theme.toggle')" @click="toggleTheme">
 				<Icon :icon="isDark ? 'mdi:weather-sunny' : 'mdi:weather-night'" width="28" height="28" />
 			</button>
 		</nav>
@@ -72,7 +76,16 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { Icon } from '@iconify/vue'
+
+const { locale } = useI18n()
+
+function toggleLocale() {
+	const next = locale.value === 'ru' ? 'en' : 'ru'
+	locale.value = next
+	localStorage.setItem('locale', next)
+}
 
 const props = defineProps({
 	open: Boolean
